@@ -214,7 +214,7 @@ input[type="checkbox"] {
 
 select {
     padding: 15px;
-    height: 32px;
+    height: 48px;
     border-radius: 2px;
 }
 
@@ -227,8 +227,8 @@ button {
     text-align: center;
     font-style: normal;
     width: 100%;
-    border-width: 1px 1px 3px;
-
+    border-width: 0;
+    cursor: pointer;
     margin-bottom: 10px;
 }
 
