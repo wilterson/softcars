@@ -59,7 +59,7 @@
                     <p>Faça seu cadastro para oferecer caronas.</p>
                 </section>
                 <section>
-                    <form action="index.html" method="post">
+                    <form action="cadastra-veiculo.php" method="post">
                         <fieldset class="form-section">
                             <legend><span class="number">1</span>Dados Pessoais</legend>
                             <label for="name">Nome:</label>
@@ -71,8 +71,8 @@
                             <label for="password">Senha:</label>
                             <input type="password" id="password" name="user_password">
 
-                            <label for="password">Repita Senha:</label>
-                            <input type="password" id="password" name="user_password">
+                            <label for="repitapassword">Repita Senha:</label>
+                            <input type="password" id="repitapassword" name="user_password">
 
                             <label>Idade:</label>
                             <input type="text" name="" class="" id="">
@@ -80,14 +80,15 @@
                         <fieldset class="form-section">
                             <legend><span class="number">2</span>Dados do Veículo</legend>
                             <label for="name">Marca:</label>
-                            <select>
+                            <select name="marca">
                                 <option value="">Selecione</option>
                                 <option value="chevrolet">Chevrolet</option>
                                 <option value="ford">Ford</option>
+                                <option value="ford">Hyundai</option>
                             </select>
 
-                            <label for="mail">Email:</label>
-                            <input type="email" id="mail" name="user_email">
+                            <label for="veiculo-ano">Ano:</label>
+                            <input type="text" id="veiculo-ano" name="user_email">
 
                             <label for="password">Senha:</label>
                             <input type="password" id="password" name="user_password">
