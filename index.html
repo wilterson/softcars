@@ -47,6 +47,50 @@
                     <p>Faça seu cadastro para começar a pegar caronas desejada.</p>
                 </section>
 
+                <section>
+                    <form action="cadastra-passageiro.php" method="post">
+                        <fieldset class="form-section">
+                            <legend><span class="number">1</span>Dados Pessoais</legend>
+                            <br />
+                            <br />
+                            <br />
+                            <label align=”Left” for="name">Nome:</label>
+                            <input type="text" id="name" name="user_name">
+
+                            <label for="mail">Email:</label>
+                            <input type="email" id="mail" name="user_email">
+
+                            <label for="password">Senha:</label>
+                            <input type="password" id="password" name="user_password">
+
+                            <label for="repitapassword">Repita Senha:</label>
+                            <input type="password" id="repitapassword" name="user_password">
+
+                            <label>Idade:</label>
+                            <input type="text" name="" class="" id="">
+                        </fieldset>
+
+                        <fieldset class="form-section">
+                            <legend><span class="number">2</span>Dados local</legend>
+                            <br />
+                            <br />
+                            <br />
+                            <label for="name">Estado:</label>
+                                <select name="estado">
+                                <option value="">Selecione</option>
+                                <option value="acre">AC</option>
+                                <option value="alagoas">AL</option>
+                                <option value="amapa">AP</option>
+
+                                <select />
+
+
+
+                       </fieldset>
+                        <button type="submit">Cadastrar</button>
+                        </form>
+                </section>
+
             </div><!-- /page-inner -->
         </div>
         <!-- /Passageiro -->
@@ -84,20 +128,28 @@
                                 <option value="">Selecione</option>
                                 <option value="chevrolet">Chevrolet</option>
                                 <option value="ford">Ford</option>
-                                <option value="ford">Hyundai</option>
+<<<<<<< HEAD
+                                <option value="hyundai">Hyundai</option>
+=======
+                                <option value="toyota">Toyota</option>
+                                <option value="fiat">Fiat</option>
+                                <option value="wolksvagem">Wolksvangem</option>
+                                <option value="kia">KIA</option>
+                                <option value="citroen">Citroen</option>
+                                <option value="ford">Ford</option>
+                                <option value="ford">Ford</option>
+>>>>>>> f4cfb3f5167d1470dbd717e688561444d5e99cd5
                             </select>
 
-                            <label for="veiculo-ano">Ano:</label>
-                            <input type="text" id="veiculo-ano" name="user_email">
+                            <label for="veiculo-modelo">Modelo:</label>
+                            <input type="text" id="veiculo-modelo" name="user_modelo">
 
-                            <label for="password">Senha:</label>
-                            <input type="password" id="password" name="user_password">
+                            <label for="veiculo-cor">Cor:</label>
+                            <input type="text" id="veiculo-cor" name="user_cor">
 
-                            <label for="password">Repita Senha:</label>
-                            <input type="password" id="password" name="user_password">
+                            <label for="veiculo-placa">Placa:</label>
+                            <input type="text" id="veiculo-placa" name="user_placa">
 
-                            <label>Idade:</label>
-                            <input type="text" name="" class="" id="">
                         </fieldset>
                         <button type="submit">Cadastrar</button>
                     </form>
