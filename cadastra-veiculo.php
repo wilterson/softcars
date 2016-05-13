@@ -12,7 +12,23 @@ $nomeUsuario = $_POST['user_name'];
 $userMail = $_POST['user_email'];
 $marca = $_POST['marca'];
 
+$userMail = $_POST['user_email'];
+$marca = $_POST['marca'];
 
+$userMail = $_POST['user_email'];
+$marca = $_POST['marca'];
+
+$userMail = $_POST['user_email'];
+$marca = $_POST['marca'];
+
+$userMail = $_POST['user_email'];
+$marca = $_POST['marca'];
+
+$userMail = $_POST['user_email'];
+$marca = $_POST['marca'];
+
+$userMail = $_POST['user_email'];
+$marca = $_POST['marca'];
 // Conexao com BD
 
 
