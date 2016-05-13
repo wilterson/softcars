@@ -193,7 +193,7 @@ input[type="time"],
 input[type="url"],
 textarea,
 select {
-    background: rgba(255,255,255,0.1);
+    background: rgba(255, 246, 254, 1);
     border: none;
     font-size: 16px;
     height: auto;
@@ -201,7 +201,7 @@ select {
     outline: 0;
     padding: 15px;
     width: 100%;
-    background-color: #e8eeef;
+    background-color: #FFF;
     color: #8a97a0;
     box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
     margin-bottom: 30px;
