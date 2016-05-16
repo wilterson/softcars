@@ -10,25 +10,15 @@
 
 $nomeUsuario = $_POST['user_name'];
 $userMail = $_POST['user_email'];
+$userPassword = $_POST['user-password'];
+$userIdade = $_POST['user_age'];
 $marca = $_POST['marca'];
+$userModelo = $_POST['user_modelo'];
+$userCor = $_POST['user_cor'];
+$userPlaca = $_POST['user_placa'];
 
-$userMail = $_POST['user_email'];
-$marca = $_POST['marca'];
 
-$userMail = $_POST['user_email'];
-$marca = $_POST['marca'];
 
-$userMail = $_POST['user_email'];
-$marca = $_POST['marca'];
-
-$userMail = $_POST['user_email'];
-$marca = $_POST['marca'];
-
-$userMail = $_POST['user_email'];
-$marca = $_POST['marca'];
-
-$userMail = $_POST['user_email'];
-$marca = $_POST['marca'];
 // Conexao com BD
 
 
