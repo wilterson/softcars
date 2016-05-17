@@ -1,7 +1,7 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Parker
- * Date: 16-05-2016
- * Time: 01:08
- */
+
+$nomeUsuario = $_POST['user_name'];
+$userMail = $_POST['user_email'];
+$userPassword = $_POST['user-password'];
+$userIdade = $_POST['user_age'];
+
