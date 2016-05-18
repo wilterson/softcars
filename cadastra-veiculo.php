@@ -8,14 +8,14 @@
 
 // Recebe todas as variaveis do formulario (inputs)
 
-$nomeUsuario = $_POST['user_name'];
-$userMail = $_POST['user_email'];
-$userPassword = $_POST['user_password'];
-$userIdade = $_POST['user_age'];
-$marca = $_POST['marca'];
-$userModelo = $_POST['user_modelo'];
-$userCor = $_POST['user_cor'];
-$userPlaca = $_POST['user_placa'];
+$nomeUsuario = $_POST['driver_name'];
+$userMail = $_POST['driver_email'];
+$userPassword = $_POST['driver_password'];
+$userIdade = $_POST['driver_age'];
+$marca = $_POST['car_marca'];
+$userModelo = $_POST['car_modelo'];
+$userCor = $_POST['car_cor'];
+$userPlaca = $_POST['car_placa'];
 
 
 

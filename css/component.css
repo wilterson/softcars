@@ -204,7 +204,7 @@ select {
     background-color: #FFF;
     color: #8a97a0;
     box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 }
 
 input[type="radio"],
@@ -452,6 +452,14 @@ form{
     -webkit-transform: translateX(0%);
     transform: translateX(0%);
 }
+
+.error{
+    color: #F44336;
+    font-size: 12px;
+
+}
+
+
 
 /* Media Queries */
 @media screen and (max-width: 83em) {

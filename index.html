@@ -61,21 +61,28 @@
                             <input type="password" id="pPassword" name="user_password">
 
                             <label for="pPasswordAgain">Repita Senha:</label>
-                            <input type="password" id="pPasswordAgain" name="user_password">
+                            <input type="password" id="pPasswordAgain" name="user_passwordAgain">
 
                             <label for="pIdade">Idade:</label>
                             <input type="text" name="user_age" class="" id="pIdade">
                         </fieldset>
 
                         <fieldset class="form-section">
-                            <legend><span class="number">2</span>Dados local</legend>
+                            <legend><span class="number">2</span>Endereço</legend>
                             <label for="pEstado">Estado:</label>
-                            <select name="estado" id="pEstado">
+                            <select name="pEstado" id="pEstado">
                                 <option value="">Selecione</option>
                                 <option value="acre">AC</option>
                                 <option value="alagoas">AL</option>
                                 <option value="amapa">AP</option>
                             </select>
+
+                            <label for="pCidade">Cidade:</label>
+                            <input type="text" id="pCidade" name="user_cidade">
+
+                            <label for="pRua">Rua:</label>
+                            <input type="text" name="user_rua" class="" id="pRua">
+
                         </fieldset>
                         <button type="submit">Cadastrar</button>
                     </form>
@@ -159,22 +166,57 @@
 
 <script type="text/javascript">
     $(document).ready(function(){
-        $( "#formPassageiro" ).validate(
-                {
-                rules:
-                {
-                    user_name:
-                    {
-                        required: true,
-                    }
-                    user_email:
-                    {
-                        required: true,
-                    }
+        $( "#formPassageiro" ).validate({
+            rules:{
+                user_name:{
+                    required: true,
+                },
+                user_email:{
+                    required: true,
+                    email: true
+                },
+                user_password:{
+                    required: true,
+                    minlength: 8
+                },
+                user_passwordAgain:{
+                    required: true,
+                    equalTo: "#pPassword"
+                },
+                user_age:{
+                    required: true,
+                    min: 18,
+                    number: true
+                },
+                pEstado:{
+                    required: true
+                }
 
-                FIELD
-
-
+            },
+            messages: {
+                user_name:{
+                    required: "Usuário é obrigatório",
+                },
+                user_email:{
+                    required: "Email é obrigatorio",
+                    email: "Email inválido"
+                },
+                user_password:{
+                    required: "Cadastre uma senha de 8 caracteres ou mais.",
+                    minlength: "A senha deve ter ao menos 8 caracteres"
+                },
+                user_passwordAgain:{
+                    required: "Este campo é obrigatório",
+                    equalTo: "As senhas não conferem"
+                },
+                user_age:{
+                    required: "Cadastre sua Idade",
+                    min: "Somente maiores de 18 Anos podem pegar caronas",
+                    number: "Somente números"
+                },
+                pEstado:{
+                    required: "Campo Obrigatório"
+                }
             }
         });
     })
