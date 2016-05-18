@@ -10,7 +10,7 @@
 
 $nomeUsuario = $_POST['user_name'];
 $userMail = $_POST['user_email'];
-$userPassword = $_POST['user-password'];
+$userPassword = $_POST['user_password'];
 $userIdade = $_POST['user_age'];
 $marca = $_POST['marca'];
 $userModelo = $_POST['user_modelo'];

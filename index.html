@@ -48,46 +48,37 @@
                 </section>
 
                 <section>
-                    <form action="cadastra-passageiro.php" method="post">
+                    <form action="cadastra-passageiro.php" method="post" id="formPassageiro">
                         <fieldset class="form-section">
                             <legend><span class="number">1</span>Dados Pessoais</legend>
-                            <br />
-                            <br />
-                            <br />
-                            <label align=”Left” for="name">Nome:</label>
-                            <input type="text" id="name" name="user_name">
+                            <label for="pName">Nome:</label>
+                            <input type="text" id="pName" name="user_name">
 
-                            <label for="mail">Email:</label>
-                            <input type="email" id="mail" name="user_email">
+                            <label for="pMail">Email:</label>
+                            <input type="email" id="pMail" name="user_email">
 
-                            <label for="password">Senha:</label>
-                            <input type="password" id="password" name="user_password">
+                            <label for="pPassword">Senha:</label>
+                            <input type="password" id="pPassword" name="user_password">
 
-                            <label for="repitapassword">Repita Senha:</label>
-                            <input type="password" id="repitapassword" name="user_password">
+                            <label for="pPasswordAgain">Repita Senha:</label>
+                            <input type="password" id="pPasswordAgain" name="user_password">
 
-                            <label>Idade:</label>
-                            <input type="text" name="user_age" class="" id="">
+                            <label for="pIdade">Idade:</label>
+                            <input type="text" name="user_age" class="" id="pIdade">
                         </fieldset>
 
                         <fieldset class="form-section">
                             <legend><span class="number">2</span>Dados local</legend>
-                            <br />
-                            <br />
-                            <br />
-                            <label for="name">Estado:</label>
-                                <select name="estado">
+                            <label for="pEstado">Estado:</label>
+                            <select name="estado" id="pEstado">
                                 <option value="">Selecione</option>
                                 <option value="acre">AC</option>
                                 <option value="alagoas">AL</option>
                                 <option value="amapa">AP</option>
-
-                                <select />
-
-
-                       </fieldset>
+                            </select>
+                        </fieldset>
                         <button type="submit">Cadastrar</button>
-                        </form>
+                    </form>
                 </section>
 
             </div><!-- /page-inner -->
@@ -105,25 +96,25 @@
                     <form action="cadastra-veiculo.php" method="post">
                         <fieldset class="form-section">
                             <legend><span class="number">1</span>Dados Pessoais</legend>
-                            <label for="name">Nome:</label>
-                            <input type="text" id="name" name="user_name">
+                            <label for="mName">Nome:</label>
+                            <input type="text" id="mName" name="driver_name">
 
-                            <label for="mail">Email:</label>
-                            <input type="email" id="mail" name="user_email">
+                            <label for="mMail">Email:</label>
+                            <input type="email" id="mMail" name="driver_email">
 
-                            <label for="password">Senha:</label>
-                            <input type="password" id="password" name="user_password">
+                            <label for="mPassword">Senha:</label>
+                            <input type="password" id="mPassword" name="driver_password">
 
-                            <label for="repitapassword">Repita Senha:</label>
-                            <input type="password" id="repitapassword" name="user_password">
+                            <label for="mPasswordAgain">Repita Senha:</label>
+                            <input type="password" id="mPasswordAgain" name="driver_password">
 
-                            <label>Idade:</label>
-                            <input type="text" name="user_age" class="" id="">
+                            <label for="mIdade">Idade:</label>
+                            <input type="text" name="driver_age" class="" id="mIdade">
                         </fieldset>
                         <fieldset class="form-section">
                             <legend><span class="number">2</span>Dados do Veículo</legend>
-                            <label for="name">Marca:</label>
-                            <select name="marca">
+                            <label for="mMarca">Marca:</label>
+                            <select name="car_marca" id="mMarca">
                                 <option value="">Selecione</option>
                                 <option value="chevrolet">Chevrolet</option>
                                 <option value="ford">Ford</option>
@@ -135,14 +126,14 @@
                                 <option value="citroen">Citroen</option>
                             </select>
 
-                            <label for="veiculo-modelo">Modelo:</label>
-                            <input type="text" id="veiculo-modelo" name="user_modelo">
+                            <label for="mModelo">Modelo:</label>
+                            <input type="text" id="mModelo" name="car_modelo">
 
-                            <label for="veiculo-cor">Cor:</label>
-                            <input type="text" id="veiculo-cor" name="user_cor">
+                            <label for="mCor">Cor:</label>
+                            <input type="text" id="mCor" name="car_cor">
 
-                            <label for="veiculo-placa">Placa:</label>
-                            <input type="text" id="veiculo-placa" name="user_placa">
+                            <label for="mPlaca">Placa:</label>
+                            <input type="text" id="mPlaca" name="car_placa">
 
                         </fieldset>
                         <button type="submit">Cadastrar</button>
@@ -160,5 +151,32 @@
 <script src="js/classie.js"></script>
 <script src="js/cbpSplitLayout.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+<!-- jQuery Validation -->
+<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="js/additional-methods.min.js"></script>
 </body>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $( "#formPassageiro" ).validate(
+                {
+                rules:
+                {
+                    user_name:
+                    {
+                        required: true,
+                    }
+                    user_email:
+                    {
+                        required: true,
+                    }
+
+                FIELD
+
+
+            }
+        });
+    })
+</script>
 </html>
