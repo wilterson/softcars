@@ -8,14 +8,21 @@
 
 // Recebe todas as variaveis do formulario (inputs)
 
-$nomeUsuario = $_POST['driver_name'];
-$userMail = $_POST['driver_email'];
-$userPassword = $_POST['driver_password'];
-$userIdade = $_POST['driver_age'];
-$marca = $_POST['car_marca'];
-$userModelo = $_POST['car_modelo'];
-$userCor = $_POST['car_cor'];
-$userPlaca = $_POST['car_placa'];
+$driverName = $_POST['driver_name'];
+$driverMail = $_POST['driver_email'];
+$driverPassword = $_POST['driver_password'];
+$driverIdade = $_POST['driver_age'];
+$carMarca = $_POST['car_marca'];
+$carModelo = $_POST['car_modelo'];
+$carCor = $_POST['car_cor'];
+$carPlaca = $_POST['car_placa'];
+$driverCep = $_POST ['driver_cep'];
+$driverEstado = $_POST['driver_estado'];
+$driverCidade = $_POST['driver_cidade'];
+$driverRua = $_POST['driver_rua'];
+$driverNumero = $_POST['driver_numero'];
+$driverComplemento = $_POST['driver_complemento'];
+
 
 
 
@@ -27,4 +34,4 @@ $userPlaca = $_POST['car_placa'];
 
 
 
-echo $marca;
+echo $carMarca;

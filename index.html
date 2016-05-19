@@ -38,7 +38,7 @@
                 <div class="overlay"></div>
             </div>
         </div><!-- /intro -->
-
+        <!-- Cadastro do passageiro -->
         <!-- Passageiro -->
         <div class="page page-right">
             <div class="page-inner">
@@ -64,13 +64,17 @@
                             <input type="password" id="pPasswordAgain" name="user_passwordAgain">
 
                             <label for="pIdade">Idade:</label>
-                            <input type="text" name="user_age" class="" id="pIdade">
+                            <input type="text"  id="pIdade" name="user_age">
                         </fieldset>
 
                         <fieldset class="form-section">
                             <legend><span class="number">2</span>Endereço</legend>
+
+                            <label for="pCep">CEP:</label>
+                            <input type="text" id="pCep" name="user_cep">
+
                             <label for="pEstado">Estado:</label>
-                            <select name="pEstado" id="pEstado">
+                            <select  id="pEstado" name="user_estado">
                                 <option value="">Selecione</option>
                                 <option value="acre">AC</option>
                                 <option value="alagoas">AL</option>
@@ -81,8 +85,13 @@
                             <input type="text" id="pCidade" name="user_cidade">
 
                             <label for="pRua">Rua:</label>
-                            <input type="text" name="user_rua" class="" id="pRua">
+                            <input type="text"  id="pRua" name="user_rua">
 
+                            <label for="pNumero">Número:</label>
+                            <input type="text" id="pNumero" name="user_numero">
+
+                            <label for="pComplemento">Complemento:</label>
+                            <input type="text" id="pComplemento" name="user_complemento">
                         </fieldset>
                         <button type="submit">Cadastrar</button>
                     </form>
@@ -91,7 +100,8 @@
             </div><!-- /page-inner -->
         </div>
         <!-- /Passageiro -->
-
+        
+        <!-- Cadastro do motorista -->
         <!-- Motorista -->
         <div class="page page-left">
             <div class="page-inner">
@@ -100,7 +110,7 @@
                     <p>Faça seu cadastro para oferecer caronas.</p>
                 </section>
                 <section>
-                    <form action="cadastra-veiculo.php" method="post">
+                    <form action="cadastra-veiculo.php" method="post" id="formMotorista">
                         <fieldset class="form-section">
                             <legend><span class="number">1</span>Dados Pessoais</legend>
                             <label for="mName">Nome:</label>
@@ -116,12 +126,13 @@
                             <input type="password" id="mPasswordAgain" name="driver_password">
 
                             <label for="mIdade">Idade:</label>
-                            <input type="text" name="driver_age" class="" id="mIdade">
+                            <input type="text" id="mIdade" name="driver_age">
                         </fieldset>
+
                         <fieldset class="form-section">
                             <legend><span class="number">2</span>Dados do Veículo</legend>
                             <label for="mMarca">Marca:</label>
-                            <select name="car_marca" id="mMarca">
+                            <select  id="mMarca" name="car_marca">
                                 <option value="">Selecione</option>
                                 <option value="chevrolet">Chevrolet</option>
                                 <option value="ford">Ford</option>
@@ -141,8 +152,35 @@
 
                             <label for="mPlaca">Placa:</label>
                             <input type="text" id="mPlaca" name="car_placa">
-
                         </fieldset>
+
+                        <fieldset class="form-section">
+                            <legend><span class="number">3</span>Endereço</legend>
+
+                            <label for="mCep">CEP:</label>
+                            <input type="text" id="mCep" name="driver_cep">
+
+                            <label for="mEstado">Estado:</label>
+                            <select  id="mEstado" name="driver_estado">
+                                <option value="">Selecione</option>
+                                <option value="acre">AC</option>
+                                <option value="alagoas">AL</option>
+                                <option value="amapa">AP</option>
+                            </select>
+
+                            <label for="mCidade">Cidade:</label>
+                            <input type="text" id="mCidade" name="driver_cidade">
+
+                            <label for="mRua">Rua:</label>
+                            <input type="text"  id="mRua" name="driver_rua">
+
+                            <label for="mNumero">Número:</label>
+                            <input type="text" id="mNumero" name="driver_numero">
+
+                            <label for="mComplemento">Complemento:</label>
+                            <input type="text" id="mComplemento" name="driver_complemento">
+                        </fieldset>
+
                         <button type="submit">Cadastrar</button>
                     </form>
                 </section>
@@ -188,11 +226,23 @@
                     min: 18,
                     number: true
                 },
-                pEstado:{
+                user_cep:{
+                    required: true
+                },
+                user_estado:{
+                    required: true
+                },
+                user_cidade:{
+                    required: true
+                },
+                user_rua:{
+                    required: true
+                },
+                user_numero:{
                     required: true
                 }
-
             },
+
             messages: {
                 user_name:{
                     required: "Usuário é obrigatório",
@@ -214,9 +264,124 @@
                     min: "Somente maiores de 18 Anos podem pegar caronas",
                     number: "Somente números"
                 },
-                pEstado:{
-                    required: "Campo Obrigatório"
+                user_cep:{
+                    required: "CEP é obrigatório"
+                },
+                user_estado:{
+                    required: "Estado Obrigatório"
+                },
+                user_cidade:{
+                    required: "Cidade é obrigatório"
+                },
+                user_rua:{
+                    required: "Rua é obrigatório"
+                },
+                user_numero:{
+                    required: "Campo obrigatório"
                 }
+
+            }
+        });
+
+        $( "#formMotorista" ).validate({
+            rules:{
+                driver_name:{
+                    required: true,
+                },
+                driver_email:{
+                    required: true,
+                    email: true
+                },
+                driver_password:{
+                    required: true,
+                    minlength: 8
+                },
+                driver_passwordAgain:{
+                    required: true,
+                    equalTo: "#mPassword"
+                },
+                driver_age:{
+                    required: true,
+                    min: 18,
+                    number: true
+                },
+                car_marca:{
+                    required: true
+                },
+                car_modelo:{
+                    required: true
+                },
+                car_cor:{
+                    required: true
+                },
+                car_placa:{
+                    required: true
+                },
+                driver_cep:{
+                    required: true
+                },
+                driver_estado:{
+                    required: true
+                },
+                driver_cidade:{
+                    required: true
+                },
+                driver_rua:{
+                    required: true
+                },
+                driver_numero:{
+                    required: true
+                }
+            },
+            messages: {
+                driver_name:{
+                    required: "Usuário é obrigatório",
+                },
+                driver_email:{
+                    required: "Email é obrigatorio",
+                    email: "Email inválido"
+                },
+                driver_password:{
+                    required: "Cadastre uma senha de 8 caracteres ou mais.",
+                    minlength: "A senha deve ter ao menos 8 caracteres"
+                },
+                driver_passwordAgain:{
+                    required: "Este campo é obrigatório",
+                    equalTo: "As senhas não conferem"
+                },
+                driver_age:{
+                    required: "Cadastre sua Idade",
+                    min: "Somente maiores de 18 Anos podem dar caronas",
+                    number: "Somente números"
+                },
+                car_marca:{
+                    required: "A marca do carro é obrigatória"
+                },
+                car_modelo:{
+                    required: "O modelo do carro é obrigatório"
+                },
+                car_cor:{
+                    required: "A cor do carro é obrigatória"
+                },
+                car_placa:{
+                    required: "A placa do carro é obrigatória"
+                },
+                driver_cep:{
+                    required: "CEP é obrigatório"
+                },
+                driver_estado:{
+                    required: "Estado Obrigatório"
+                },
+                driver_cidade:{
+                    required: "Cidade é obrigatório"
+                },
+                driver_rua:{
+                    required: "Rua é obrigatório"
+                },
+                driver_numero:{
+                    required: "Campo obrigatório"
+                }
+
             }
         });
     })
