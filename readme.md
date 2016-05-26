@@ -22,5 +22,5 @@ v1.0
 Desenvolvedores
 ------------------------------
 
-Wilterson Garcia - www.wilterson.com.br
-Ivanilson Lino
+- Wilterson Garcia - www.wilterson.com.br
+- Ivanilson Lino
