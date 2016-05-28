@@ -1,19 +1,10 @@
 <?php
-$host = "locallhost";
-$user = "root";
-$pass = "";
-$banco = "test";
-$link = mysql_connect($host, $user, $pass) or die (mysql_error());
-$db = mysql_select_db($banco, $link) or die (mysql_error());
 
-if(!$link)
-{
-    echo "erro ao conectar ao banco de dados!";exit();
-}
+// INCLUDE DO BANCO DE DADOS
+require_once 'admin/bd/PDO.class.php';
+$db = PDO::conexao();
 
-?>
 
-<?php
 $nomeUsuario = $_POST['user_name'];
 $userMail = $_POST['user_email'];
 $userPassword = $_POST['user_password'];

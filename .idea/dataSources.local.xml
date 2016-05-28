@@ -7,5 +7,11 @@
       <schema-pattern>test.*</schema-pattern>
       <default-schemas>test.*</default-schemas>
     </data-source>
+    <data-source name="MySQL - softcars@localhost" uuid="010af543-1793-4e72-a40b-3df16813cfd9">
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <schema-pattern>softcars.*</schema-pattern>
+      <default-schemas>softcars.*</default-schemas>
+    </data-source>
   </component>
 </project>
