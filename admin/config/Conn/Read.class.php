@@ -48,7 +48,7 @@ class Read extends Conn{
      */
 
     private function Connect(){
-        $this->Conn() = parent::getConn();
+        $this->Conn= parent::getConn();
         $this->Read = $this->Conn->prepare($this->Select);
         $this->Read->setFetchMode(PDO::FETCH_ASSOC);
     }
