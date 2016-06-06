@@ -1,0 +1,17 @@
+
+
+
+
+.banner{
+    height: 100vh;
+    background: url("../img/banner.jpg");
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+.formulario{
+    background: #1A1A1C;
+}
+.formulario .logo{
+    width: 250px;
+}

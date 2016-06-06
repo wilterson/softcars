@@ -14,6 +14,13 @@ body {
     max-width: 350px;
 }
 
+.banner{
+    height: 1000px;
+    background: url('../img/banner.jpg') ;
+}
+
+
+
 .splitlayout {
     position: relative;
     overflow-x: hidden;

@@ -126,3 +126,140 @@ textarea:focus, input:focus, input[type]:focus {
 .lockscreen-footer {
     margin-top: 10px;
 }
+
+/*
+ * Page: Registrar
+ * ----------------------
+ */
+.logo{
+    width: 100%;
+}
+
+.registrar-logo{
+    margin-bottom: 25px;
+}
+
+.registrar-page,
+.register-page {
+    background: black;
+}
+
+.registrar-page:after{
+    content: "";
+    background: url("../img/fundo-login.jpg") center center;
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.checkbox label{
+    padding: 0;
+}
+
+.registrar-box input{
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+
+textarea:focus, input:focus, input[type]:focus {
+    border-color: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+    outline: 0 none;
+}
+
+.registrar-box,
+.register-box {
+    width: 360px;
+    margin: 7% auto 0 auto;
+}
+
+.button-entrar{
+    margin-top: 5px;
+}
+
+.registrar-box-buttons{
+    width: 360px;
+    margin: 10px auto;
+    background: #FFF;
+    -webkit-box-shadow: 0 2px 5px #ddd;
+    -moz-box-shadow: 0 2px 5px #ddd;
+    box-shadow: 0 2px 5px #ddd;
+}
+
+.registrar-box-buttons a{
+    color: #000;
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    padding: 10px;
+    font-family: 'Lato', sans-serif;
+}
+
+.registrar-box-buttons a:hover{
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .registrar-box,
+    .register-box {
+        width: 90%;
+        margin-top: 20px;
+    }
+}
+.registrar-box-body,
+.register-box-body {
+    background: #fff;
+    padding: 20px;
+    border-top: 0;
+    color: #666;
+}
+.registrar-box-body .form-control-feedback,
+.register-box-body .form-control-feedback {
+    color: #777;
+}
+.registrar-box-msg,
+.register-box-msg {
+    margin: 0;
+    text-align: center;
+    padding: 0 20px 20px 20px;
+}
+.social-auth-links {
+    margin: 10px 0;
+}
+
+/* Contains the password input and the registrar button */
+.lockscreen-credentials {
+    margin-left: 70px;
+}
+.lockscreen-credentials .form-control {
+    border: 0;
+}
+.lockscreen-credentials .btn {
+    background-color: #fff;
+    border: 0;
+    padding: 0 10px;
+}
+.lockscreen-footer {
+    margin-top: 10px;
+}
+
+.select-cidade{
+    width: 50%;
+    display: inline-block;
+}
+
+.select-estado{
+    width: 48%;
+    display: inline-block;
+}
+
+.registrar-box select{
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
