@@ -91,36 +91,30 @@
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
-                <select name="estado" class="form-control select-estado">
-                    <option value="">Estado<option>
-                    <option value="curitiba">PR</option>
-                    <option value="pinhais"></option>
-                    <option value="colombo"></option>
-                </select>
-
-                <select name="cidade" class="form-control select-cidade">
-                    <option value="">Cidade<option>
-                    <option value="curitiba">Curitiba</option>
-                    <option value="pinhais">Pinhais</option>
-                    <option value="colombo">Colombo</option>
-                </select>
+                <input type="text" class="form-control" placeholder="Celular" id="celular" name="registrar-celular">
+                <span class="glyphicon glyphicon-phone form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
-                <input type="email" class="form-control" placeholder="E-mail" name="registrar-email">
-                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                <input type="text" class="form-control" placeholder="Idade" id="idade" name="registrar-idade">
+                <span class="glyphicon glyphicon-gift form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
-                <input type="password" class="form-control" placeholder="Senha" name="login-senha">
+                <input type="text" class="form-control" placeholder="CEP" id="cep" name="registrar-cep">
+                <span class="glyphicon glyphicon-map-marker form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback">
+                <input type="password" class="form-control" placeholder="Senha" id="senha" name="registrar-senha">
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
-                <input type="checkbox" name="tipo" checked data-toggle="toggle" data-on="Motorista" data-width="110" data-off="Passageiro" data-onstyle="info" data-offstyle="primary">
+                <input type="password" class="form-control" placeholder="Repita a Senha" id="senha-again" name="registrar-senha-again">
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
             </div>
 
             <div class="row">
                 <!-- /.col -->
-                <div class="col-xs-4 button-cadastrar">
-                    <button type="submit" class="btn btn-primary btn-block btn-flat">Entrar</button>
+                <div class="col-xs-12 button-cadastrar">
+                    <button type="submit" class="btn btn-primary btn-block btn-flat">Cadastrar</button>
                 </div>
                 <!-- /.col -->
             </div>
@@ -144,6 +138,12 @@
 <!-- Bootstrap Toggle -->
 <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
+<!-- Input Mask -->
+<script type="application/javascript" src="assets/plugins/input-mask/jquery.inputmask.js"></script>
+<script type="application/javascript" src="assets/plugins/input-mask/jquery.inputmask.phone.extensions.js"></script>
+<script type="application/javascript" src="assets/plugins/input-mask/phone-codes"></script>
+<script type="application/javascript" src="assets/plugins/input-mask/jquery.inputmask.extensions.js"></script>
+
 <!-- iCheck -->
 <script src="assets/plugins/iCheck/icheck.min.js"></script>
 <script>
@@ -153,6 +153,9 @@
             radioClass: 'iradio_square-blue',
             increaseArea: '20%' // optional
         });
+
+        $('#cep').inputmask("99999-999");
+        $('#celular').inputmask("(99)9999-9999");
 
         $('.register-toggle').on("click", function(){
             $('.login-box').addClass("hidden");
