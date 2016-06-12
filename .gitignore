@@ -9,7 +9,7 @@
 /node_modules/
 ad.js
 bd/
-
+admin/config/initialize.php
 
 TODO
 test.html
