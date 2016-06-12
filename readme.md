@@ -7,7 +7,7 @@ App desenvolvido no curso de tecnologia em Análise e Desenvolvimento de Sistema
 v1.0
 ------------------------------
 
-- Cadastro de motoriastas e passageiros
+- Cadastro de motoristas e passageiros
 - Dashboard
 - Cadastro de rotas
 - Cadastro de Carros
