@@ -1,0 +1,11 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700|Montserrat:400,700|Muli);
+/* Fonts
+ * font-family: 'Lato', sans-serif;
+ * font-family: 'Muli', sans-serif;
+ * font-family: 'Montserrat', sans-serif;
+*/
+
+.text-help{
+    font-size: 12px;
+    font-family: 'Muli', Sans-Serif;
+}

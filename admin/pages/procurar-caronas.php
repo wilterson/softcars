@@ -2,12 +2,11 @@
 /**
  * Created by PhpStorm.
  * User: Wilterson Garcia
- * Date: 26/05/2016
- * Time: 19:25
+ * Date: 11/06/2016
+ * Time: 07:29
  */
 
 include_once('../config/initialize.php');
-
 ?>
 
 <!DOCTYPE html>
@@ -54,17 +53,55 @@ include_once('../config/initialize.php');
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Todas as Rotas
+                Procurar Caronas
             </h1>
             <ol class="breadcrumb">
-                <li><a href="<?= ADMIN ?>index.php"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-                <li class="active">Rotas</li>
+                <li><a href="<?= ADMIN ?>/index.php"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+                <li><a href="<?= PAGES ?>/caronas.php"> Caronas</a></li>
+                <li class="active">Procurar Caronas</li>
             </ol>
+            <p class="lead">Entre com os dados abaixo para procurar uma carona com o mesmo destino que você</p>
         </section>
 
         <!-- Main content -->
         <section class="content">
+            <div class="row">
+                <!-- left column -->
+                <div class="col-md-12">
+                    <!-- general form elements -->
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Pesquisar caronas</h3>
+                        </div>
+                        <!-- /.box-header -->
+                        <!-- form start -->
+                        <form role="form" class="formRotas" method="post" action="">
+                            <div class="box-body">
+                                <div class="form-group col-md-3">
+                                    <label for="origem">Origem</label>
+                                    <input type="text" class="form-control" id="origem" placeholder="Origem">
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="destino">Destino</label>
+                                    <input type="text" class="form-control" id="destino" placeholder="Destino">
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="lugares">Lugares Vagos</label>
+                                    <input type="number" class="form-control" id="lugares" placeholder="Lugares Vagos" max="4" min="1" />
+                                </div>
+                            </div>
+                            <!-- /.box-body -->
 
+                            <div class="box-footer">
+                                <a class="btn btn-flat btn-default" id=""><i class="fa fa-search"></i> Procurar</a>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- /.box -->
+                </div>
+                <!--/.col (left) -->
+            </div>
+            <!-- /.row -->
         </section>
         <!-- /.content -->
     </div>

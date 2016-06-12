@@ -53,17 +53,113 @@ include_once('../config/initialize.php');
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Todas as Rotas
+                Histórico de Caronas
             </h1>
             <ol class="breadcrumb">
-                <li><a href="<?= ADMIN ?>index.php"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-                <li class="active">Rotas</li>
+                <li><a href="<?= ADMIN ?>/index.php"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+                <li class="active">Histórico</li>
             </ol>
         </section>
 
         <!-- Main content -->
+        <!-- Main content -->
         <section class="content">
-
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="box">
+                        <div class="box-header">
+                            <h3 class="box-title">Histórico das caronas</h3>
+                        </div>
+                        <!-- /.box-header -->
+                        <div class="box-body">
+                            <table id="example1" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Data</th>
+                                        <th>Motorista</th>
+                                        <th>Origem</th>
+                                        <th>Destino</th>
+                                        <th>Carro</th>
+                                        <th>Placa</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>10/06/2016</td>
+                                        <td>José dos Santos</td>
+                                        <td>Curitiba</td>
+                                        <td>Colombo</td>
+                                        <td>Nissan Z</td>
+                                        <td>BRK-8845</td>
+                                        <td><span class=" badge bg-green">Concluída</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>10/06/2016</td>
+                                        <td>José dos Santos</td>
+                                        <td>Curitiba</td>
+                                        <td>Colombo</td>
+                                        <td>Nissan Z</td>
+                                        <td>BRK-8845</td>
+                                        <td><span class=" badge bg-red">Cancelada</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>10/06/2016</td>
+                                        <td>José dos Santos</td>
+                                        <td>Curitiba</td>
+                                        <td>Colombo</td>
+                                        <td>Nissan Z</td>
+                                        <td>BRK-8845</td>
+                                        <td><span class=" badge bg-yellow">Pendente</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>10/06/2016</td>
+                                        <td>José dos Santos</td>
+                                        <td>Curitiba</td>
+                                        <td>Colombo</td>
+                                        <td>Nissan Z</td>
+                                        <td>BRK-8845</td>
+                                        <td><span class=" badge bg-red">Cancelada</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>10/06/2016</td>
+                                        <td>José dos Santos</td>
+                                        <td>Curitiba</td>
+                                        <td>Colombo</td>
+                                        <td>Nissan Z</td>
+                                        <td>BRK-8845</td>
+                                        <td><span class=" badge bg-green">Concluída</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>10/06/2016</td>
+                                        <td>José dos Santos</td>
+                                        <td>Curitiba</td>
+                                        <td>Colombo</td>
+                                        <td>Nissan Z</td>
+                                        <td>BRK-8845</td>
+                                        <td><span class=" badge bg-green">Concluída</span></td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>Data</th>
+                                        <th>Motorista</th>
+                                        <th>Origem</th>
+                                        <th>Destino</th>
+                                        <th>Carro</th>
+                                        <th>Placa</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                    <!-- /.box -->
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
         </section>
         <!-- /.content -->
     </div>

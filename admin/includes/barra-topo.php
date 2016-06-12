@@ -9,7 +9,7 @@
 
 <header class="main-header">
     <!-- Logo -->
-    <a href="<?= ADMIN ?>index.html" class="logo">
+    <a href="<?= ADMIN ?>/index.php" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini">
             <img src="<?= ASSETS ?>/img/car-icon.png" alt="">
@@ -44,7 +44,7 @@
                                 <li><!-- start message -->
                                     <a href="#">
                                         <div class="pull-left">
-                                            <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                            <img src="<?= DIST ?>/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                                         </div>
                                         <h4>
                                             Support Team
@@ -63,13 +63,13 @@
                 <!-- Usuario -->
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                        <img src="<?= DIST ?>/img/user2-160x160.jpg" class="user-image" alt="User Image">
                         <span class="hidden-xs">Alexander Pierce</span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->
                         <li class="user-header">
-                            <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                            <img src="<?= DIST ?>/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                             <p>
                                 Wilterson Garcia
@@ -79,10 +79,10 @@
                         <!-- Menu Footer-->
                         <li class="user-footer">
                             <div class="pull-left">
-                                <a href="#" class="btn btn-default btn-flat">Perfil</a>
+                                <a href="<?= PAGES ?>/perfil.php" class="btn btn-default btn-flat">Perfil</a>
                             </div>
                             <div class="pull-right">
-                                <a href="#" class="btn btn-default btn-flat">Logout</a>
+                                <a href="<?= ADMIN ?>/logout.php" class="btn btn-default btn-flat">Logout</a>
                             </div>
                         </li>
                     </ul>

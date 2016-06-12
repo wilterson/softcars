@@ -56,7 +56,7 @@ include_once('../config/initialize.php');
                 Agenda
             </h1>
             <ol class="breadcrumb">
-                <li><a href="<?= ADMIN ?>index.php"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+                <li><a href="<?= ADMIN ?>/index.php"><i class="fa fa-dashboard"></i> Dashboard</a></li>
                 <li class="active">Rotas</li>
             </ol>
         </section>

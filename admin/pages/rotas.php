@@ -27,6 +27,8 @@ include_once('../config/initialize.php');
     <link rel="stylesheet" href="../../assets/plugins/jvectormap/jquery-jvectormap-1.2.2.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="../dist/css/dashboard.css">
+    <link rel="stylesheet" href="../dist/css/rotas.css">
+
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="../dist/css/skins/_all-skins.css">
@@ -41,11 +43,11 @@ include_once('../config/initialize.php');
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
     <?php
-        //Barra Topo
-        include_once('../includes/barra-topo.php');
+    //Barra Topo
+    include_once('../includes/barra-topo.php');
 
-        //Menu
-        include_once('../includes/menu.php');
+    //Menu
+    include_once('../includes/menu.php');
     ?>
 
     <!-- Content Wrapper. Contains page content -->
@@ -56,24 +58,187 @@ include_once('../config/initialize.php');
                 Todas as Rotas
             </h1>
             <ol class="breadcrumb">
-                <li><a href="<?= ADMIN ?>index.php"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+                <li><a href="<?= ADMIN ?>/index.php"><i class="fa fa-dashboard"></i> Dashboard</a></li>
                 <li class="active">Rotas</li>
             </ol>
         </section>
 
         <!-- Main content -->
         <section class="content">
-            <div class="col-sm-12 col-md-6 col-lg-8">
+            <div class="row">
+                <!-- left column -->
+                <div class="col-md-12">
+                    <!-- general form elements -->
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Cadastrar Nova Rota</h3>
+                        </div>
+                        <!-- /.box-header -->
+                        <!-- form start -->
+                        <form role="form" class="formRotas" method="post" action="">
+                            <div class="box-body">
+                                <div class="form-group col-md-3">
+                                    <label for="nomeRota">Nome da rota (opcional)</label>
+                                    <input type="text" class="form-control" id="nomeRota" name="nomeRota" placeholder="Ex: Casa - Trabalho">
+                                    <span class="text-info text-help">Você pode colocar um nome na sua rota para mante-las organizadas.</span>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="origem">Origem</label>
+                                    <input type="text" class="form-control" name="origemRota" id="origem" placeholder="Origem">
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="destino">Destino</label>
+                                    <input type="text" class="form-control" name="destinoRota" id="destino" placeholder="Destino">
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="observacoes">Observações</label>
+                                    <input type="text" class="form-control" name="observacaoRota" id="observacoes" placeholder="Observações">
+                                </div>
+                            </div>
+                            <!-- /.box-body -->
 
+                            <div class="box-footer">
+                                <a class="btn btn-flat btn-success" id="addRota"><i class="fa fa-plus"></i> Adicionar rota</a>
+                                <button type="reset" class="btn btn-flat btn-danger" id=""><i class="fa fa-eraser"></i> Limpar campos</button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- /.box -->
+                </div>
+                <!--/.col (left) -->
+                <!-- right column -->
+                <div class="col-md-12">
+                    <!-- general form elements disabled -->
+                    <div class="box box-warning">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Rotas cadastradas</h3>
+                        </div>
+                        <!-- /.box-header -->
+                        <div class="box-body">
+                            <table class="table table-hover">
+                                <tr>
+                                    <th>#</th>
+                                    <th>Nome da Rota</th>
+                                    <th>Origem</th>
+                                    <th>Destino</th>
+                                    <th>Cadastrada em</th>
+                                    <th>Observações</th>
+                                    <th>Ações</th>
+                                    <th>Favoritar</th>
+                                </tr>
+                                <tr>
+                                    <td>#1</td>
+                                    <td>Casa - Trabalho</td>
+                                    <td>Pinheirinho</td>
+                                    <td>Portão</td>
+                                    <td>13/06/2016 as 18:30</td>
+                                    <td>Caminhonete preta com rotas aro 21"</td>
+                                    <td>
+                                        <a class="btn btn-flat btn-success"><i class="fa fa-car"></i> Iniciar rota</a>
+                                        <a class="btn btn-flat btn-primary"><i class="fa fa-pencil"></i> Editar</a>
+                                        <a class="btn btn-flat btn-danger"><i class="fa fa-trash"></i> Excluir</a>
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-flat btn-warning"><i class="fa fa-star-o"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#1</td>
+                                    <td>Casa - Trabalho</td>
+                                    <td>Pinheirinho</td>
+                                    <td>Portão</td>
+                                    <td>13/06/2016 as 18:30</td>
+                                    <td>Caminhonete preta com rotas aro 21"</td>
+                                    <td>
+                                        <a class="btn btn-flat btn-success"><i class="fa fa-car"></i> Iniciar rota</a>
+                                        <a class="btn btn-flat btn-primary"><i class="fa fa-pencil"></i> Editar</a>
+                                        <a class="btn btn-flat btn-danger"><i class="fa fa-trash"></i> Excluir</a>
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-flat btn-warning"><i class="fa fa-star-o"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#1</td>
+                                    <td>Casa - Trabalho</td>
+                                    <td>Pinheirinho</td>
+                                    <td>Portão</td>
+                                    <td>13/06/2016 as 18:30</td>
+                                    <td>Caminhonete preta com rotas aro 21"</td>
+                                    <td>
+                                        <a class="btn btn-flat btn-success"><i class="fa fa-car"></i> Iniciar rota</a>
+                                        <a class="btn btn-flat btn-primary"><i class="fa fa-pencil"></i> Editar</a>
+                                        <a class="btn btn-flat btn-danger"><i class="fa fa-trash"></i> Excluir</a>
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-flat btn-warning"><i class="fa fa-star-o"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#1</td>
+                                    <td>Casa - Trabalho</td>
+                                    <td>Pinheirinho</td>
+                                    <td>Portão</td>
+                                    <td>13/06/2016 as 18:30</td>
+                                    <td>Caminhonete preta com rotas aro 21"</td>
+                                    <td>
+                                        <a class="btn btn-flat btn-success"><i class="fa fa-car"></i> Iniciar rota</a>
+                                        <a class="btn btn-flat btn-primary"><i class="fa fa-pencil"></i> Editar</a>
+                                        <a class="btn btn-flat btn-danger"><i class="fa fa-trash"></i> Excluir</a>
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-flat btn-warning"><i class="fa fa-star-o"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#1</td>
+                                    <td>Casa - Trabalho</td>
+                                    <td>Pinheirinho</td>
+                                    <td>Portão</td>
+                                    <td>13/06/2016 as 18:30</td>
+                                    <td>Caminhonete preta com rotas aro 21"</td>
+                                    <td>
+                                        <a class="btn btn-flat btn-success"><i class="fa fa-car"></i> Iniciar rota</a>
+                                        <a class="btn btn-flat btn-primary"><i class="fa fa-pencil"></i> Editar</a>
+                                        <a class="btn btn-flat btn-danger"><i class="fa fa-trash"></i> Excluir</a>
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-flat btn-warning"><i class="fa fa-star-o"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#1</td>
+                                    <td>Casa - Trabalho</td>
+                                    <td>Pinheirinho</td>
+                                    <td>Portão</td>
+                                    <td>13/06/2016 as 18:30</td>
+                                    <td>Caminhonete preta com rotas aro 21"</td>
+                                    <td>
+                                        <a class="btn btn-flat btn-success"><i class="fa fa-car"></i> Iniciar rota</a>
+                                        <a class="btn btn-flat btn-primary"><i class="fa fa-pencil"></i> Editar</a>
+                                        <a class="btn btn-flat btn-danger"><i class="fa fa-trash"></i> Excluir</a>
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-flat btn-warning"><i class="fa fa-star-o"></i></a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                    <!-- /.box -->
+                </div>
+                <!--/.col (right) -->
             </div>
+            <!-- /.row -->
         </section>
         <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
 
     <?php
-        //Footer
-        include_once('../includes/footer.php');
+    //Footer
+    include_once('../includes/footer.php');
     ?>
 
 

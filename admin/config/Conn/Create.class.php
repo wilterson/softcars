@@ -18,6 +18,7 @@ class Create extends Conn{
     private $Tabela;
     private $Dados;
     private $Result;
+    private $StatusInsert = false;
 
     /** $var PDOStatement */
     private $Create;
@@ -49,6 +50,14 @@ class Create extends Conn{
         return $this->Result;
     }
 
+    /**
+     * <b>getStatus</b> Retorna o status do cadastro True se inseriu, False se não.
+     *
+     * @param BOOLEAN = Status do insert
+     **/
+    public function getStatus(){
+        return $this->StatusInsert;
+    }
 
     /**
      * ****************************************
@@ -77,6 +86,7 @@ class Create extends Conn{
         try{
             $this->Create->execute($this->Dados);
             $this->Result = $this->Conn->lastInsertId();
+            $this->StatusInsert = true;
 
         }catch (PDOException $e){
             $this->Result = null;

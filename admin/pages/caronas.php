@@ -56,14 +56,94 @@ include_once('../config/initialize.php');
                 Caronas
             </h1>
             <ol class="breadcrumb">
-                <li><a href="<?= ADMIN ?>index.php"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+                <li><a href="<?= ADMIN ?>/index.php"><i class="fa fa-dashboard"></i> Dashboard</a></li>
                 <li class="active">Caronas</li>
             </ol>
         </section>
 
         <!-- Main content -->
         <section class="content">
-
+            <!-- Main row -->
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    <!-- USERS LIST -->
+                    <div class="box box-success">
+                        <div class="box-header">
+                            <h3 class="box-title">Todas as caronas cadastradas</h3>
+                        </div>
+                        <!-- /.box-header -->
+                        <div class="box-body table-responsive no-padding">
+                            <table class="table table-hover">
+                                <tr>
+                                    <th>#</th>
+                                    <th>Motorista</th>
+                                    <th>Data</th>
+                                    <th>Assentos Disponiveis</th>
+                                    <th>Origem</th>
+                                    <th>Destino</th>
+                                    <th>Comentário</th>
+                                    <th>Ações</th>
+                                </tr>
+                                <tr>
+                                    <td>#1</td>
+                                    <td>John Doe</td>
+                                    <td>12/06/2016</td>
+                                    <td><span class="label label-success">4</span></td>
+                                    <td>Santa Cândida</td>
+                                    <td>Pinheirinho</td>
+                                    <td>Saida as 8h30</td>
+                                    <td>
+                                        <a class="btn btn-flat btn-success"><i class="fa fa-thumbs-o-up"></i> Solicitar</a>
+                                        <a class="btn btn-flat btn-primary"><i class="fa fa-search"></i> Ver Detalhes</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#2</td>
+                                    <td>John Doe</td>
+                                    <td>12/06/2016</td>
+                                    <td><span class="label label-warning">1</span></td>
+                                    <td>Portão</td>
+                                    <td>Fazenda Rio Grande</td>
+                                    <td>Saida as 8h30</td>
+                                    <td>
+                                        <a class="btn btn-flat btn-success"><i class="fa fa-thumbs-o-up"></i> Solicitar</a>
+                                        <a class="btn btn-flat btn-primary"><i class="fa fa-search"></i> Ver Detalhes</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#3</td>
+                                    <td>John Doe</td>
+                                    <td>12/06/2016</td>
+                                    <td><span class="label label-warning">2</span></td>
+                                    <td>Pinheirinho</td>
+                                    <td>Campina do Siqueira</td>
+                                    <td>Saida as 8h30</td>
+                                    <td>
+                                        <a class="btn btn-flat btn-success"><i class="fa fa-thumbs-o-up"></i> Solicitar</a>
+                                        <a class="btn btn-flat btn-primary"><i class="fa fa-search"></i> Ver Detalhes</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#4</td>
+                                    <td>John Doe</td>
+                                    <td>12/06/2016</td>
+                                    <td><span class="label label-success">4</span></td>
+                                    <td>Pinhais</td>
+                                    <td>Colombo</td>
+                                    <td>Saida as 8h30</td>
+                                    <td>
+                                        <a class="btn btn-flat btn-success"><i class="fa fa-thumbs-o-up"></i> Solicitar</a>
+                                        <a class="btn btn-flat btn-primary"><i class="fa fa-search"></i> Ver Detalhes</a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <!--/.box -->
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
         </section>
         <!-- /.content -->
     </div>

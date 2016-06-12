@@ -1,19 +1,23 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: wilte
+ * Date: 11/06/2016
+ * Time: 09:45
+ */
 
 include('config/initialize.php');
 include('config/Conn/Conn.class.php');
 
 // Recebe e valida as variaveis
-$nome = strip_tags(filter_var(strtolower( $_POST['registrar-nome'] ), FILTER_SANITIZE_STRING));
-$email = strip_tags(filter_var(strtolower( $_POST['registrar-email'] ), FILTER_SANITIZE_EMAIL));
-$celular = strip_tags(filter_var(str_replace('-', '', $_POST['registrar-celular']), FILTER_SANITIZE_NUMBER_INT));
-$dtNasc = strip_tags($_POST['registrar-dtNasc']);
-$cep = str_replace('-', '', strip_tags($_POST['registrar-cep']));
-$senha = MD5(strip_tags($_POST['registrar-senha']));
+$nomeRota = filter_var(strtolower( $_POST['nomeRota'] ), FILTER_SANITIZE_STRING);
+$origemRota = filter_var(strtolower( $_POST['origemRota'] ), FILTER_SANITIZE_STRING);
+$destinoRota = filter_var(strtolower( $_POST['destinoRota'] ), FILTER_SANITIZE_STRING);
+$observacaoRota = filter_var(strtolower( $_POST['observacaoRota'] ), FILTER_SANITIZE_STRING);
 
 $result = false;
 
-// Monta array para cadastro de usuario (tabela usuarios)
+// Monta array para cadastro de rota (tabela rota)
 $dados = array("nome" => $nome,
     "email" => $email,
     "celular" => $celular,
@@ -56,6 +60,5 @@ if( $verifEmail->getRowCount() >= 1){
     }else{
         $msge = "error";
         echo $msge;
-        die;
     }
 }

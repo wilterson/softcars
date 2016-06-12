@@ -126,74 +126,79 @@ include_once('config/initialize.php');
 
             <!-- Main row -->
             <div class="row">
-                <div class="col-sm-12 col-md-6 col-lg-8">
-
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-4">
+                <div class="col-sm-12 col-md-12 col-lg-12">
                     <!-- USERS LIST -->
-                    <div class="box box-danger">
-                        <div class="box-header with-border">
-                            <h3 class="box-title">Últimos Motoristas Cadastrados</h3>
-
-                            <div class="box-tools pull-right">
-                                <span class="label label-danger">8 Novos Motoristas</span>
-                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                                </button>
-                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
-                                </button>
-                            </div>
+                    <div class="box box-success">
+                        <div class="box-header">
+                            <h3 class="box-title">Sugestões de Caronas</h3>
                         </div>
                         <!-- /.box-header -->
-                        <div class="box-body no-padding">
-                            <ul class="users-list clearfix">
-                                <li>
-                                    <img src="dist/img/user1-128x128.jpg" alt="User Image">
-                                    <a class="users-list-name" href="#">Alexander Pierce</a>
-                                    <span class="users-list-date">Today</span>
-                                </li>
-                                <li>
-                                    <img src="dist/img/user8-128x128.jpg" alt="User Image">
-                                    <a class="users-list-name" href="#">Norman</a>
-                                    <span class="users-list-date">Yesterday</span>
-                                </li>
-                                <li>
-                                    <img src="dist/img/user7-128x128.jpg" alt="User Image">
-                                    <a class="users-list-name" href="#">Jane</a>
-                                    <span class="users-list-date">12 Jan</span>
-                                </li>
-                                <li>
-                                    <img src="dist/img/user6-128x128.jpg" alt="User Image">
-                                    <a class="users-list-name" href="#">John</a>
-                                    <span class="users-list-date">12 Jan</span>
-                                </li>
-                                <li>
-                                    <img src="dist/img/user5-128x128.jpg" alt="User Image">
-                                    <a class="users-list-name" href="#">Alexander</a>
-                                    <span class="users-list-date">13 Jan</span>
-                                </li>
-                                <li>
-                                    <img src="dist/img/user5-128x128.jpg" alt="User Image">
-                                    <a class="users-list-name" href="#">Sarah</a>
-                                    <span class="users-list-date">14 Jan</span>
-                                </li>
-                                <li>
-                                    <img src="dist/img/user4-128x128.jpg" alt="User Image">
-                                    <a class="users-list-name" href="#">Nora</a>
-                                    <span class="users-list-date">15 Jan</span>
-                                </li>
-                                <li>
-                                    <img src="dist/img/user3-128x128.jpg" alt="User Image">
-                                    <a class="users-list-name" href="#">Nadia</a>
-                                    <span class="users-list-date">15 Jan</span>
-                                </li>
-                            </ul>
-                            <!-- /.users-list -->
+                        <div class="box-body table-responsive no-padding">
+                            <table class="table table-hover">
+                                <tr>
+                                    <th>#</th>
+                                    <th>Motorista</th>
+                                    <th>Data</th>
+                                    <th>Assentos Disponiveis</th>
+                                    <th>Origem</th>
+                                    <th>Destino</th>
+                                    <th>Comentário</th>
+                                    <th>Ações</th>
+                                </tr>
+                                <tr>
+                                    <td>#1</td>
+                                    <td>John Doe</td>
+                                    <td>12/06/2016</td>
+                                    <td><span class="label label-success">4</span></td>
+                                    <td>Santa Cândida</td>
+                                    <td>Pinheirinho</td>
+                                    <td>Saida as 8h30</td>
+                                    <td>
+                                        <a class="btn btn-flat btn-success"><i class="fa fa-thumbs-o-up"></i> Solicitar</a>
+                                        <a class="btn btn-flat btn-primary"><i class="fa fa-search"></i> Ver Detalhes</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#2</td>
+                                    <td>John Doe</td>
+                                    <td>12/06/2016</td>
+                                    <td><span class="label label-warning">1</span></td>
+                                    <td>Portão</td>
+                                    <td>Fazenda Rio Grande</td>
+                                    <td>Saida as 8h30</td>
+                                    <td>
+                                        <a class="btn btn-flat btn-success"><i class="fa fa-thumbs-o-up"></i> Solicitar</a>
+                                        <a class="btn btn-flat btn-primary"><i class="fa fa-search"></i> Ver Detalhes</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#3</td>
+                                    <td>John Doe</td>
+                                    <td>12/06/2016</td>
+                                    <td><span class="label label-warning">2</span></td>
+                                    <td>Pinheirinho</td>
+                                    <td>Campina do Siqueira</td>
+                                    <td>Saida as 8h30</td>
+                                    <td>
+                                        <a class="btn btn-flat btn-success"><i class="fa fa-thumbs-o-up"></i> Solicitar</a>
+                                        <a class="btn btn-flat btn-primary"><i class="fa fa-search"></i> Ver Detalhes</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#4</td>
+                                    <td>John Doe</td>
+                                    <td>12/06/2016</td>
+                                    <td><span class="label label-success">4</span></td>
+                                    <td>Pinhais</td>
+                                    <td>Colombo</td>
+                                    <td>Saida as 8h30</td>
+                                    <td>
+                                        <a class="btn btn-flat btn-success"><i class="fa fa-thumbs-o-up"></i> Solicitar</a>
+                                        <a class="btn btn-flat btn-primary"><i class="fa fa-search"></i> Ver Detalhes</a>
+                                    </td>
+                                </tr>
+                            </table>
                         </div>
-                        <!-- /.box-body -->
-                        <div class="box-footer text-center">
-                            <a href="javascript:void(0)" class="uppercase">Ver Todos</a>
-                        </div>
-                        <!-- /.box-footer -->
                     </div>
                     <!--/.box -->
                 </div>

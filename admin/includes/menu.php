@@ -37,18 +37,22 @@
             </li>
             <li class="treeview">
                 <a href="#">
-                    <i class="fa fa-car"></i> <span>Caronas</span>
+                    <i class="fa fa-male"></i> <span>Caronas</span>
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href=""><i class="fa fa-calendar-o"></i> Todas as Caronas</a></li>
-                    <li><a href=""><i class="fa fa-search"></i> Procurar Carona</a></li>
+                    <li><a href="<?= PAGES ?>/caronas.php"><i class="fa fa-calendar-o"></i> Todas as Caronas</a></li>
+                    <li><a href="<?= PAGES ?>/procurar-caronas.php"><i class="fa fa-search"></i> Procurar Carona</a></li>
                 </ul>
             </li>
-            <li>
-                <a href="<?= PAGES ?>/agenda.php"> <!-- Agenda Link -->
-                    <i class="fa fa-calendar"></i> <span>Agenda Semanal</span>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-car"></i> <span>Carros</span>
+                    <i class="fa fa-angle-left pull-right"></i>
                 </a>
+                <ul class="treeview-menu">
+                    <li><a href="<?= PAGES ?>/carros.php"><i class="fa fa-plus-circle"></i> Cadastrar Carro</a></li>
+                </ul>
             </li>
             <li>
                 <a href="<?= PAGES ?>/historico.php"> <!-- Histórico Link -->
@@ -64,8 +68,8 @@
                 </a>
             </li>
             <li>
-                <a href="<?= PAGES ?>/settings.php"> <!-- Configs Link -->
-                    <i class="fa fa-cogs"></i> <span>Configurações</span>
+                <a href="<?= PAGES ?>/about.php"> <!-- Configs Link -->
+                    <i class="fa fa-question"></i> <span>Sobre</span>
                 </a>
             </li>
         </ul>

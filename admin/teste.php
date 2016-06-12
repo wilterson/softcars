@@ -8,9 +8,13 @@
 
 require "config/initialize.php";
 
-$read = new Read();
-$read->ExeRead('teste', 'WHERE name = :nome', "name=Jose&id<=3&limit=3");
+$email = 'wilterson@gmail.com';
 
-echo "<pre>";
-print_r($read);
-echo "</pre>";
+$read = new Read();
+$read->ExeRead('usuarios', 'WHERE email = :email', "email=$email");
+
+if( $read-> getRowCount() >= 1){
+    echo "<pre>";
+    print_r($read->getResult());
+    echo "</pre>";
+}
