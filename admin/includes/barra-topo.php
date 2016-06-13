@@ -64,7 +64,7 @@
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <img src="<?= DIST ?>/img/user2-160x160.jpg" class="user-image" alt="User Image">
-                        <span class="hidden-xs">Alexander Pierce</span>
+                        <span class="hidden-xs"><?= ucwords($user->nome) ?></span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->
@@ -72,8 +72,8 @@
                             <img src="<?= DIST ?>/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                             <p>
-                                Wilterson Garcia
-                                <small>Member since Nov. 2012</small>
+                                <?= ucwords($user->nome) ?>
+                                <small>Membro Desde <?php  $data = new Auxiliares(); $data->dataBR($user->data_cadastro); echo $data->dateBR ?></small>
                             </p>
                         </li>
                         <!-- Menu Footer-->
@@ -82,14 +82,14 @@
                                 <a href="<?= PAGES ?>/perfil.php" class="btn btn-default btn-flat">Perfil</a>
                             </div>
                             <div class="pull-right">
-                                <a href="<?= ADMIN ?>/logout.php" class="btn btn-default btn-flat">Logout</a>
+                                <a href="<?= CONFIG ?>/logout.php?logout=true" class="btn btn-default btn-flat">Logout</a>
                             </div>
                         </li>
                     </ul>
                 </li>
                 <!-- Control Sidebar Toggle Button -->
                 <li>
-                    <a href="#" data-toggle="control-sidebar"><i class="fa fa-sign-out"> </i> Logout</a>
+                    <a href="<?= CONFIG ?>/logout.php?logout=true" class="btn btn-flat"><i class="fa fa-sign-out"></i> Logout</a>
                 </li>
             </ul>
         </div>

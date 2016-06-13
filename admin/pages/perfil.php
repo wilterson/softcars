@@ -7,6 +7,8 @@
  */
 
 include_once('../config/initialize.php');
+include_once('../config/session.php');
+include_once('../config/dados_user.php');
 ?>
 
 <!DOCTYPE html>
@@ -23,13 +25,14 @@ include_once('../config/initialize.php');
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-    <!-- jvectormap -->
-    <link rel="stylesheet" href="../../assets/plugins/jvectormap/jquery-jvectormap-1.2.2.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="../dist/css/dashboard.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="../dist/css/skins/_all-skins.css">
+    <!-- Bootstrap datepicker -->
+    <link href="../../assets/plugins/datepicker/datepicker3.css" type="text/css" rel="stylesheet">
+    <!-- Sweet Alert -->    <link rel="stylesheet" href="../../assets/css/sweetalert.css" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -69,17 +72,17 @@ include_once('../config/initialize.php');
                         <div class="box-body box-profile">
                             <img class="profile-user-img img-responsive img-circle" src="<?= DIST ?>/img/user4-128x128.jpg" alt="Imagem de perfil do usuário">
 
-                            <h3 class="profile-username text-center">Wilterson garcia</h3>
+                            <h3 class="profile-username text-center"><?= ucwords($user->nome) ?></h3>
 
                             <ul class="list-group list-group-unbordered">
                                 <li class="list-group-item">
                                     <b>Carros Cadastrados</b> <a class="pull-right">0</a>
                                 </li>
                                 <li class="list-group-item">
-                                    <b>Tipo de Uuário</b> <a class="pull-right">Passageiro</a>
+                                <b>Tipo de Uuário</b> <a class="pull-right"><?= $user->tipo_user == 1 ? 'Passageiro' : 'Motorista'?></a>
                                 </li>
                                 <li class="list-group-item">
-                                    <b>Idade</b> <a class="pull-right">21</a>
+                                    <b>Idade</b> <a class="pull-right"><?php   $idade = new Auxiliares(); $idade->getIdade($user->dataNascimento); echo $idade->idade;?></a>
                                 </li>
                             </ul>
 
@@ -93,54 +96,90 @@ include_once('../config/initialize.php');
                 <div class="col-md-9">
                     <div class="nav-tabs-custom">
                         <ul class="nav nav-tabs">
-                            <li class="active"><a href="#activity" data-toggle="tab">Fotos</a></li>
-                            <li><a href="#settings" data-toggle="tab">Dados da Conta</a></li>
+                            <li class="active"><a href="#settings" data-toggle="tab">Dados da Conta</a></li>
+                            <li class=""><a href="#acesso" data-toggle="tab">Dados de Acesso</a></li>
+                            <li class=""><a href="#activity" data-toggle="tab">Fotos</a></li>
                         </ul>
                         <div class="tab-content">
                             <div class="active tab-pane" id="activity">
 
                             </div>
-                            <!-- /.tab-pane -->
-                            <div class="tab-pane" id="timeline">
 
+                            <div class="tab-pane" id="acesso">
+                                <form class="form-horizontal" id="formDadosAcesso" action="" method="post">
+                                    <div class="form-group">
+                                        <label for="Login" class="col-sm-2 control-label">Login</label>
+
+                                        <div class="col-sm-10">
+                                            <input type="email" class="form-control" id="Login" name="login" placeholder="Login" value="<?= $loginUser->login ?>">
+                                            <span class="text-sm text-blue">E-mail utilizado para fazer login no sistema</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="Senha" class="col-sm-2 control-label">Senha Atual</label>
+
+                                        <div class="col-sm-10">
+                                            <input type="password" class="form-control" id="Senha" name="senha" placeholder="Senha" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="SenhaNova" class="col-sm-2 control-label">Nova Senha</label>
+
+                                        <div class="col-sm-10">
+                                            <input type="password" class="form-control" id="SenhaNova" name="novaSenha" placeholder="Nova Senha"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="SenhaNovaAgain" class="col-sm-2 control-label">Repita a Senha</label>
+
+                                        <div class="col-sm-10">
+                                            <input type="password" class="form-control" id="SenhaNovaAgain" name="novaSenhaAgain" placeholder="Repita a senha" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-2 col-sm-10">
+                                            <button class="btn btn-file"><i class="fa fa-floppy-o"></i> Atualizar Dados</button>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                             <!-- /.tab-pane -->
 
-                            <div class="tab-pane" id="settings">
-                                <form class="form-horizontal">
+                            <div class=" active tab-pane" id="settings">
+                                <form class="form-horizontal" id="formPerfil" action="" method="post">
                                     <div class="form-group">
                                         <label for="userName" class="col-sm-2 control-label">Nome</label>
 
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="userName" placeholder="Nome Completo" value="">
+                                            <input type="text" class="form-control" id="userName" name="nome" placeholder="Nome Completo" value="<?= ucwords($user->nome) ?>">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="userEmail" class="col-sm-2 control-label">Email</label>
 
                                         <div class="col-sm-10">
-                                            <input type="email" class="form-control" id="userEmail" placeholder="Email">
+                                            <input type="email" class="form-control" name="email" id="userEmail" placeholder="Email" value="<?= $user->email ?>">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="userCelular" class="col-sm-2 control-label">Celular</label>
 
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="userCelular" placeholder="Celular">
+                                            <input type="text" class="form-control" name="celular" id="userCelular" placeholder="Celular" value="<?= $user->celular ?>">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="userDtNasc" class="col-sm-2 control-label">Data de nascimento</label>
 
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="userDtNasc" placeholder="dd/mm/aaaa">
+                                            <input type="text" class="form-control" name="dtNasc" id="userDtNasc" placeholder="dd/mm/aaaa" readonly="readonly" style="background: #FFF;" value="<?= $user->dataNascimento ?>">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="userCep" class="col-sm-2 control-label">Cep</label>
 
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="userCep" placeholder="Cep">
+                                            <input type="text" class="form-control" name="cep" id="userCep" placeholder="Cep" value="<?= $user->cep ?>">
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -178,7 +217,7 @@ include_once('../config/initialize.php');
 
                                     <div class="form-group">
                                         <div class="col-sm-offset-2 col-sm-10">
-                                            <button type="submit" class="btn btn-primary"><i class="fa fa-floppy-o"></i> Salvar dados</button>
+                                            <button class="btn btn-primary"><i class="fa fa-floppy-o"></i> Salvar dados</button>
                                         </div>
                                     </div>
                                 </form>
@@ -215,19 +254,193 @@ include_once('../config/initialize.php');
 <script src="../../assets/plugins/fastclick/fastclick.js"></script>
 <!-- AdminLTE App -->
 <script src="../dist/js/app.js"></script>
-<!-- Sparkline -->
-<script src="../../assets/plugins/sparkline/jquery.sparkline.min.js"></script>
-<!-- jvectormap -->
-<script src="../../assets/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-<script src="../../assets/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-<!-- SlimScroll 1.3.0 -->
-<script src="../../assets/plugins/slimScroll/jquery.slimscroll.min.js"></script>
-<!-- ChartJS 1.0.1 -->
-<script src="../../assets/plugins/chartjs/Chart.min.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="../dist/js/pages/dashboard2.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="../dist/js/demo.js"></script>
+<!-- Input Mask -->
+<script type="application/javascript" src="../../assets/plugins/input-mask/jquery.inputmask.js"></script>
+<script type="text/javascript" src="../../assets/plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+<script type="text/javascript" src="../../assets/plugins/input-mask/jquery.inputmask.extensions.js"></script>
+<!-- Sweet Alert -->
+<script type="text/javascript" src="../../assets/js/sweetalert.min.js"></script>
+<!-- Bootstrap Datepicker -->
+<script type="text/javascript" src="../../assets/plugins/datepicker/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="../../assets/plugins/datepicker/locales/bootstrap-datepicker.pt-BR.js"></script>
+<!-- jQuery Validate -->
+<script type="text/javascript" src="../../assets/js/jquery.validate.js"></script>
+<script type="text/javascript" src="../../assets/js/additional-methods.js"></script>
+<!-- Moment with locales -->
+<script type="text/javascript" src="../../assets/js/moment-with-locales.js"></script>
+<script>
+    $( document ).ready(function(){
+        //Pega data de hoje e subtrai 18 anos para iniciar o datepicker (somente maiores de 18 anos se cadastraram no sistema)
+        // Utiliza biblioteca moment.js para a manipulacao de datas
+        var dataHoje = moment().locale('pt').format('L');
+        var dataInicio = moment().subtract(18, 'years');
+        dataInicio = dataInicio.format('DD/MM/YYYY');
+
+        $('#userCelular').inputmask("(99)9999-9999");
+        $('#userCep').inputmask("99999-999");
+
+        //Inicia o datepicker
+        $('#userDtNasc').datepicker({
+            language: 'pt-BR',
+            keyboardNavigation: false,
+            format: 'dd/mm/yyyy',
+            startView: 2,
+            endDate: dataInicio
+        });
+
+        $("#formPerfil").validate({
+            showErrors: function(errorMap, errorList) {
+                // Clean up any tooltips for valid elements
+                $.each(this.validElements(), function (index, element) {
+                    var $element = $(element);
+                    $element.data("title", "") // Clear the title - there is no error associated anymore
+                        .removeClass("error")
+                        .tooltip("destroy");
+                });
+                // Create new tooltips for invalid elements
+                $.each(errorList, function (index, error) {
+                    var $element = $(error.element);
+                    $element.tooltip("destroy") // Destroy any pre-existing tooltip so we can repopulate with new tooltip content
+                        .data("title", error.message)
+                        .addClass("error")
+                        .tooltip(); // Create a new tooltip based on the error messsage we just set in the title
+                });
+            },
+            submitHandler: function(form) {
+                var dados = $( form ).serialize();
+                $.ajax({
+                    type: "POST",
+                    url: "../upd_cadastro.php",
+                    data: dados,
+                    success: function( data ){
+                        if(data == "success"){
+                            swal("Atualizado!", "Dados atualizados com sucesso", "success");
+                        }else if(data == "error"){
+                            swal("Erro!", "Erro ao atualizar. Tente novamnete mais tarde", "error");
+                        }
+                    }
+                });
+
+                return false;
+            },
+
+            onkeyup: false,
+            rules: {
+                nome:{
+                    required: true
+                },
+                email:{
+                    required: true,
+                    email: true
+                },
+                celular:{
+                    required: true
+                },
+                dtNasc:{
+                    required: true
+                },
+                cep:{
+                    required: true
+                }
+            },
+            messages: {
+                nome:{
+                    required: "Esse campo é obrigatório"
+                },
+                email:{
+                    required: "Esse campo é obrigatório",
+                    email: "Formato de email inválido"
+                },
+                celular:{
+                    required: "Esse campo é obrigatório"
+                },
+                dtNasc:{
+                    required: "Esse campo é obrigatório"
+                },
+                cep:{
+                    required: "Esse campo é obrigatório"
+                }
+            },
+
+        });
+
+        $("#formDadosAcesso").validate({
+            showErrors: function(errorMap, errorList) {
+                // Clean up any tooltips for valid elements
+                $.each(this.validElements(), function (index, element) {
+                    var $element = $(element);
+                    $element.data("title", "") // Clear the title - there is no error associated anymore
+                        .removeClass("error")
+                        .tooltip("destroy");
+                });
+                // Create new tooltips for invalid elements
+                $.each(errorList, function (index, error) {
+                    var $element = $(error.element);
+                    $element.tooltip("destroy") // Destroy any pre-existing tooltip so we can repopulate with new tooltip content
+                        .data("title", error.message)
+                        .addClass("error")
+                        .tooltip(); // Create a new tooltip based on the error messsage we just set in the title
+                });
+            },
+            submitHandler: function(form) {
+                alert('OK!');
+//                var dados = $( form ).serialize();
+//                $.ajax({
+//                    type: "POST",
+//                    url: "../upd_login.php",
+//                    data: dados,
+//                    success: function( data ){
+//                        if(data == "success"){
+//                            swal("Atualizado!", "Dados atualizados com sucesso", "success");
+//                        }else if(data == "error"){
+//                            swal("Erro!", "Erro ao atualizar. Tente novamnete mais tarde", "error");
+//                        }
+//                    }
+//                });
+//
+//                return false;
+            },
+            rules: {
+                "login":{
+                    required: true,
+                    email: true
+                },
+                "senha":{
+                    required: true,
+                    minLength: 6
+                },
+               "novaSenha":{
+                    required: true,
+                    minLength: 6
+                },
+                "novaSenhaAgain":{
+                    required: true,
+                    minLength: 6,
+                    equalTo: "#SenhaNova"
+                }
+            },
+            messages: {
+                "login":{
+                    required: "Este campo não pode ficar em branco",
+                    email: "Formato de e-mail inválido"
+                },
+                "senha":{
+                    required: "Este campo não pode ficar em branco",
+                    minLength: "A senha deve conter ao menos 6 caracteres"
+                },
+                "novaSenha":{
+                    required: "Este campo não pode ficar em branco",
+                    minLength: "A senha deve conter ao menos 6 caracteres"
+                },
+                "novaSenhaAgain":{
+                    required: "Este campo não pode ficar em branco",
+                    minLength: "A senha deve conter ao menos 6 caracteres",
+                    equalTo: "As senhas não conferem"
+                }
+            }
+        });
+    });
+</script>
 </body>
 </html>
 

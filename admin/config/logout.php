@@ -7,7 +7,7 @@
 
     require_once('initialize.php');
 	require_once('session.php');
-	require_once('Class/User.clas.php');
+	require_once('Conn/User.class.php');
 
     $db = new Conn();
 	$user_logout = new USER($db);
@@ -19,5 +19,5 @@
 	if(isset($_GET['logout']) && $_GET['logout']=="true")
 	{
 		$user_logout->doLogout();
-		$user_logout->redirect('index.php');
+		$user_logout->redirect(ROOT.'/index.php');
 	}

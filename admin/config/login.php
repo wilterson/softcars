@@ -6,14 +6,20 @@
  * Time: 15:05
  */
 
-$loginEmail = strip_tags($_POST['txt_uname_email']);
-$loginPass = strip_tags($_POST['txt_password']);
+require_once('initialize.php');
+require_once('Conn/User.class.php');
 
-if($login->doLogin($uname,$umail,$upass))
-{
-    $login->redirect('home.php');
-}
-else
-{
-    $error = "Wrong Details !";
+$db = new Conn();
+$db->getConn();
+$login = new USER($db);
+
+$loginEmail = strip_tags($_POST['login-email']);
+$loginPass = md5(strip_tags($_POST['login-senha']));
+
+if($login->doLogin($loginEmail,$loginPass)){
+    $msg = "success";
+    echo $msg;
+}else{
+    $msg = "error";
+    echo $msg;
 }

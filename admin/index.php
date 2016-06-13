@@ -7,6 +7,8 @@
  */
 
 include_once('config/initialize.php');
+include_once('config/session.php');
+include_once('config/dados_user.php');
 ?>
 
 <!DOCTYPE html>

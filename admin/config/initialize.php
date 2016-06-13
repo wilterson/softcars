@@ -31,8 +31,6 @@ function __autoload( $Class ){
     }
 }
 
-
-
 $base_dir  = __DIR__; // Absolute path to your installation, ex: /var/www/mywebsite
 $doc_root  = preg_replace("!${_SERVER['SCRIPT_NAME']}$!", '', $_SERVER['SCRIPT_FILENAME']); # ex: /var/www
 $base_url  = preg_replace("!^${doc_root}!", '', $base_dir); # ex: '' or '/mywebsite'
@@ -51,8 +49,6 @@ define('FOTOS', ADMIN . '/fotos');
 define('INCLUDES', ADMIN . '/includes');
 define('PAGES', ADMIN . '/pages');
 define('ASSETS', ROOT . '/assets');
-
-
 
 // PERSONALIZAÇÃO DE ERROS
 

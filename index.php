@@ -80,7 +80,7 @@
 
 <!-- Error Login -->
 <div class="login-box-buttons label-error hidden">
-    <p><i class="fa  fa-exclamation-circle"> </i> </p>
+    <p class="p-error"></p>
 </div>
 
 <!-- Registrar -->
@@ -360,12 +360,10 @@
                     data: dados,
                     success: function( data ){
                         if(data == "success"){
-                            swal("Sucesso!", "Você foi cadastrado com sucesso! Use seu e-mail e senha para fazer login no sistema", "success");
-                            $('.ja-tem-conta').click();
-                        }else if(data == "erro email"){
-                            swal("Erro!", "Esse email já possui um cadastro.", "error");
-                        }else{
-                            swal("Erro!", "Algo deu errado. Tente novamente mais tarde", "error");
+                            location.href=('admin/index.php');
+                        }else if(data == "error"){
+                            $('.label-error').removeClass('hidden');
+                            $('.p-error').empty().html('<i class="fa  fa-exclamation-circle"> </i> Erro no login');
                         }
                     }
                 });

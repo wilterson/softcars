@@ -7,6 +7,8 @@
  */
 
 include_once('../config/initialize.php');
+include_once('../config/session.php');
+include_once('../config/dados_user.php');
 ?>
 
 <!DOCTYPE html>
@@ -109,9 +111,13 @@ include_once('../config/initialize.php');
                 <!-- right column -->
                 <div class="col-md-12">
                     <!-- general form elements disabled -->
-                    <div class="box box-warning">
+                    <div class="box box-warning box-solid ">
                         <div class="box-header with-border">
                             <h3 class="box-title">Rotas cadastradas</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                                </button>
+                            </div>
                         </div>
                         <!-- /.box-header -->
                         <div class="box-body">

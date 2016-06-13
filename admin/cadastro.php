@@ -1,15 +1,15 @@
 <?php
-
+echo " <meta charset=\"utf-8\">";
 include('config/initialize.php');
 include('config/Conn/Conn.class.php');
 
 // Recebe e valida as variaveis
-$nome = strip_tags(filter_var(strtolower( $_POST['registrar-nome'] ), FILTER_SANITIZE_STRING));
+$nome = filter_var(mb_strtolower($_POST['registrar-nome'], 'UTF-8'), FILTER_SANITIZE_STRING);
 $email = strip_tags(filter_var(strtolower( $_POST['registrar-email'] ), FILTER_SANITIZE_EMAIL));
 $celular = strip_tags(filter_var(str_replace('-', '', $_POST['registrar-celular']), FILTER_SANITIZE_NUMBER_INT));
 $dtNasc = strip_tags($_POST['registrar-dtNasc']);
 $cep = str_replace('-', '', strip_tags($_POST['registrar-cep']));
-$senha = MD5(strip_tags($_POST['registrar-senha']));
+$senha = md5(strip_tags($_POST['registrar-senha']));
 
 $result = false;
 

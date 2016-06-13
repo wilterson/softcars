@@ -7,7 +7,8 @@
  */
 
 include_once('../config/initialize.php');
-
+include_once('../config/session.php');
+include_once('../config/dados_user.php');
 ?>
 
 <!DOCTYPE html>
@@ -104,14 +105,21 @@ include_once('../config/initialize.php');
 
                 <div class="col-md-3 col-xs-3 col-lg-3">
                     <!-- Profile Image -->
-                    <div class="box box-primary">
+                    <div class="box box-primary box-solid">
                         <div class="box-header">
                             <h3 class="box-title">Desenvolvedores</h3>
                         </div>
                         <div class="box-body box-profile">
                             <img class="profile-user-img img-responsive img-circle" src="<?= FOTOS ?>/devs/wilterson.jpg" alt="Imagem de perfil do usuário">
-
                             <h3 class="profile-username text-center">Wilterson Garcia</h3>
+                            <ul class="list-group list-group-unbordered">
+                                <li class="list-group-item text-center">
+                                    <a target="_blank" href="https://www.facebook.com/WiltersonGarcia" class="btn btn-social btn-social-icon btn-facebook"><i class="fa fa-facebook"></i></a>
+                                    <a target="_blank" href="https://github.com/wilterson" class="btn btn-social btn-social-icon btn-github"><i class="fa fa-github"></i></a>
+                                    <a target="_blank" href="https://br.linkedin.com/in/wilterson-garcia-a48b7792" class="btn btn-social btn-social-icon btn-linkedin"><i class="fa fa-linkedin"></i></a>
+                                </li>
+                            </ul>
+
 
                             <img class="profile-user-img img-responsive img-circle" src="<?= DIST ?>/img/user4-128x128.jpg" alt="Imagem de perfil do usuário">
 

@@ -8,13 +8,23 @@
 
 require "config/initialize.php";
 
-$email = 'wilterson@gmail.com';
+//$email = 'wilterson@gmail.com';
+//
+//$read = new Read();
+//$read->ExeRead('usuarios', 'WHERE email = :email', "email=$email");
+//
+//if( $read-> getRowCount() >= 1){
+//    echo "<pre>";
+//    print_r($read->getResult());
+//    echo "</pre>";
+//}
 
-$read = new Read();
-$read->ExeRead('usuarios', 'WHERE email = :email', "email=$email");
+$dados = array('nome' => 'José das Dores');
 
-if( $read-> getRowCount() >= 1){
-    echo "<pre>";
-    print_r($read->getResult());
-    echo "</pre>";
-}
+$update = new Update();
+$update->ExeUpdate('usuarios', $dados, 'WHERE id = :id', 'id=2');
+
+$update->setPlaces('id=10');
+echo "<pre>";
+print_r($update);
+echo "<pre>";

@@ -43,7 +43,7 @@ class Read extends Conn{
         return $this->Read->rowCount();
     }
 
-    public function fullRead(){
+    public function fullRead($Query, $ParseString = null){
         $this->Select = (string) $Query;
 
         if(!empty($ParseString)){
@@ -78,7 +78,6 @@ class Read extends Conn{
                 }
 
                 $this->Read->bindValue( ":{$Vinculo}", $Valor, (is_int($Valor) ? PDO::PARAM_INT : PDO::PARAM_STR));
-
             }
         }
     }
@@ -88,7 +87,7 @@ class Read extends Conn{
         try{
             $this->getSyntaxe();
             $this->Read->Execute();
-            $this->Result = $this->Read->fetchAll();
+            $this->Result = $this->Read->fetchObject(__CLASS__);
         }catch(PDOException $e) {
             $this->Result = null;
             WSErro("<b>Erro ao ler do banco:</b> {$e->getMessage()}", $e->getCode());
