@@ -30,7 +30,8 @@ include_once('../config/dados_user.php');
     <!-- Theme style -->
     <link rel="stylesheet" href="../dist/css/dashboard.css">
     <link rel="stylesheet" href="../dist/css/rotas.css">
-
+    <!-- Sweet Alert -->
+    <link rel="stylesheet" href="../../assets/css/sweetalert.css" type="text/css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="../dist/css/skins/_all-skins.css">
@@ -77,7 +78,7 @@ include_once('../config/dados_user.php');
                         </div>
                         <!-- /.box-header -->
                         <!-- form start -->
-                        <form role="form" class="formRotas" method="post" action="">
+                        <form role="form" id="formRotas" method="post" action="">
                             <div class="box-body">
                                 <div class="form-group col-md-3">
                                     <label for="nomeRota">Nome da rota (opcional)</label>
@@ -100,7 +101,7 @@ include_once('../config/dados_user.php');
                             <!-- /.box-body -->
 
                             <div class="box-footer">
-                                <a class="btn btn-flat btn-success" id="addRota"><i class="fa fa-plus"></i> Adicionar rota</a>
+                                <button type="submit" class="btn btn-flat btn-success" id="addRota"><i class="fa fa-plus"></i> Adicionar rota</button>
                                 <button type="reset" class="btn btn-flat btn-danger" id=""><i class="fa fa-eraser"></i> Limpar campos</button>
                             </div>
                         </form>
@@ -133,92 +134,23 @@ include_once('../config/dados_user.php');
                                     <th>Favoritar</th>
                                 </tr>
                                 <tr>
-                                    <td>#1</td>
-                                    <td>Casa - Trabalho</td>
-                                    <td>Pinheirinho</td>
-                                    <td>Portão</td>
-                                    <td>13/06/2016 as 18:30</td>
-                                    <td>Caminhonete preta com rotas aro 21"</td>
-                                    <td>
-                                        <a class="btn btn-flat btn-success"><i class="fa fa-car"></i> Iniciar rota</a>
-                                        <a class="btn btn-flat btn-primary"><i class="fa fa-pencil"></i> Editar</a>
-                                        <a class="btn btn-flat btn-danger"><i class="fa fa-trash"></i> Excluir</a>
-                                    </td>
-                                    <td>
-                                        <a class="btn btn-flat btn-warning"><i class="fa fa-star-o"></i></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>#1</td>
-                                    <td>Casa - Trabalho</td>
-                                    <td>Pinheirinho</td>
-                                    <td>Portão</td>
-                                    <td>13/06/2016 as 18:30</td>
-                                    <td>Caminhonete preta com rotas aro 21"</td>
-                                    <td>
-                                        <a class="btn btn-flat btn-success"><i class="fa fa-car"></i> Iniciar rota</a>
-                                        <a class="btn btn-flat btn-primary"><i class="fa fa-pencil"></i> Editar</a>
-                                        <a class="btn btn-flat btn-danger"><i class="fa fa-trash"></i> Excluir</a>
-                                    </td>
-                                    <td>
-                                        <a class="btn btn-flat btn-warning"><i class="fa fa-star-o"></i></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>#1</td>
-                                    <td>Casa - Trabalho</td>
-                                    <td>Pinheirinho</td>
-                                    <td>Portão</td>
-                                    <td>13/06/2016 as 18:30</td>
-                                    <td>Caminhonete preta com rotas aro 21"</td>
-                                    <td>
-                                        <a class="btn btn-flat btn-success"><i class="fa fa-car"></i> Iniciar rota</a>
-                                        <a class="btn btn-flat btn-primary"><i class="fa fa-pencil"></i> Editar</a>
-                                        <a class="btn btn-flat btn-danger"><i class="fa fa-trash"></i> Excluir</a>
-                                    </td>
-                                    <td>
-                                        <a class="btn btn-flat btn-warning"><i class="fa fa-star-o"></i></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>#1</td>
-                                    <td>Casa - Trabalho</td>
-                                    <td>Pinheirinho</td>
-                                    <td>Portão</td>
-                                    <td>13/06/2016 as 18:30</td>
-                                    <td>Caminhonete preta com rotas aro 21"</td>
-                                    <td>
-                                        <a class="btn btn-flat btn-success"><i class="fa fa-car"></i> Iniciar rota</a>
-                                        <a class="btn btn-flat btn-primary"><i class="fa fa-pencil"></i> Editar</a>
-                                        <a class="btn btn-flat btn-danger"><i class="fa fa-trash"></i> Excluir</a>
-                                    </td>
-                                    <td>
-                                        <a class="btn btn-flat btn-warning"><i class="fa fa-star-o"></i></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>#1</td>
-                                    <td>Casa - Trabalho</td>
-                                    <td>Pinheirinho</td>
-                                    <td>Portão</td>
-                                    <td>13/06/2016 as 18:30</td>
-                                    <td>Caminhonete preta com rotas aro 21"</td>
-                                    <td>
-                                        <a class="btn btn-flat btn-success"><i class="fa fa-car"></i> Iniciar rota</a>
-                                        <a class="btn btn-flat btn-primary"><i class="fa fa-pencil"></i> Editar</a>
-                                        <a class="btn btn-flat btn-danger"><i class="fa fa-trash"></i> Excluir</a>
-                                    </td>
-                                    <td>
-                                        <a class="btn btn-flat btn-warning"><i class="fa fa-star-o"></i></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>#1</td>
-                                    <td>Casa - Trabalho</td>
-                                    <td>Pinheirinho</td>
-                                    <td>Portão</td>
-                                    <td>13/06/2016 as 18:30</td>
-                                    <td>Caminhonete preta com rotas aro 21"</td>
+                                <?php
+                                    $rotas = new Read();
+                                    $rotas->ExeRead('rotas_passageiro','WHERE id_passageiro = :id', 'id='.$_SESSION['user_id']);
+                                    $result = $rotas->getResult();
+
+                                    while($row = mysqli_fetch_object( $rotas->getResult())){
+                                        echo "<pre>";
+                                        print_r($row);
+                                        echo "<pre>";
+                                    }
+                                ?>
+                                    <td><?= $result->id ?></td>
+                                    <td><?= $result->nome_rota ?></td>
+                                    <td><?= $result->origem ?></td>
+                                    <td><?= $result->destino ?></td>
+                                    <td><?= date('d/m/Y', strtotime($result->cadastrada_em))?></td>
+                                    <td><?= $result->obsRota ?></td>
                                     <td>
                                         <a class="btn btn-flat btn-success"><i class="fa fa-car"></i> Iniciar rota</a>
                                         <a class="btn btn-flat btn-primary"><i class="fa fa-pencil"></i> Editar</a>
@@ -259,19 +191,89 @@ include_once('../config/dados_user.php');
 <script src="../../assets/plugins/fastclick/fastclick.js"></script>
 <!-- AdminLTE App -->
 <script src="../dist/js/app.js"></script>
-<!-- Sparkline -->
-<script src="../../assets/plugins/sparkline/jquery.sparkline.min.js"></script>
-<!-- jvectormap -->
-<script src="../../assets/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-<script src="../../assets/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-<!-- SlimScroll 1.3.0 -->
-<script src="../../assets/plugins/slimScroll/jquery.slimscroll.min.js"></script>
-<!-- ChartJS 1.0.1 -->
-<script src="../../assets/plugins/chartjs/Chart.min.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="../dist/js/pages/dashboard2.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="../dist/js/demo.js"></script>
+
+<!-- jQuery Validate -->
+<script type="text/javascript" src="../../assets/js/jquery.validate.js"></script>
+<script type="text/javascript" src="../../assets/js/additional-methods.js"></script>
+
+<!-- Bootstrap Datepicker -->
+<script type="text/javascript" src="../../assets/plugins/datepicker/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="../../assets/plugins/datepicker/locales/bootstrap-datepicker.pt-BR.js"></script>
+
+<!-- Moment with locales -->
+<script type="text/javascript" src="../../assets/js/moment-with-locales.js"></script>
+<!-- Sweet Alert -->
+<script type="text/javascript" src="../../assets/js/sweetalert.min.js"></script>
 </body>
+
+<script>
+
+    $( document ).ready(function () {
+        $("#formRotas").validate({
+            showErrors: function(errorMap, errorList) {
+                // Clean up any tooltips for valid elements
+                $.each(this.validElements(), function (index, element) {
+                    var $element = $(element);
+                    $element.data("title", "") // Clear the title - there is no error associated anymore
+                        .removeClass("error")
+                        .tooltip("destroy");
+                });
+                // Create new tooltips for invalid elements
+                $.each(errorList, function (index, error) {
+                    var $element = $(error.element);
+                    $element.tooltip("destroy") // Destroy any pre-existing tooltip so we can repopulate with new tooltip content
+                        .data("title", error.message)
+                        .addClass("error")
+                        .tooltip(); // Create a new tooltip based on the error messsage we just set in the title
+                });
+            },
+            submitHandler: function(form) {
+                $('.avisoObrg').addClass('success');
+                var dados = $( form ).serialize();
+
+                $.ajax({
+                    type: "POST",
+                    url: "../cad_rotas.php",
+                    data: dados,
+                    success: function( data ){
+                        if(data == "success"){
+                            swal("Sucesso!", "Rota cadastrada com sucesso", "success");
+                            $('.ja-tem-conta').click();
+                        }else if(data == "error"){
+                            swal("Erro!", "Erro ao inserir rota.", "error");
+                        }
+                    }
+                });
+
+                return false;
+            },
+
+            onkeyup: false,
+            rules: {
+                'nomeRota':{
+                    required: true
+                },
+                'origemRota':{
+                    required: true
+                },
+                'destinoRota':{
+                    required: true
+                }
+            },
+            messages: {
+                'nomeRota':{
+                    required: "Esse Campo é Obrigatório",
+                },
+                'origemRota':{
+                    required: "Esse Campo é Obrigatório",
+                },
+                'destinoRota':{
+                    required: "Esse Campo é Obrigatório",
+                }
+            },
+
+        });
+    });
+</script>
 </html>
 
