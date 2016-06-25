@@ -255,6 +255,7 @@
                             swal("Erro!", "Esse email já possui um cadastro.", "error");
                         }else{
                             swal("Erro!", "Algo deu errado. Tente novamente mais tarde", "error");
+                            console.log(data);
                         }
                     }
                 });
