@@ -121,9 +121,14 @@ include_once('../config/dados_user.php');
                             </ul>
 
 
-                            <img class="profile-user-img img-responsive img-circle" src="<?= DIST ?>/img/user4-128x128.jpg" alt="Imagem de perfil do usuário">
+                            <img class="profile-user-img img-responsive img-circle" src="<?= FOTOS ?>/devs/ivanilson.jpg" alt="Imagem de perfil do usuário">
 
                             <h3 class="profile-username text-center">Ivanilson Lino</h3>
+                            <ul class="list-group list-group-unbordered">
+                                <li class="list-group-item text-center">
+                                    <a target="_blank" href="https://www.facebook.com/shwisparker" class="btn btn-social btn-social-icon btn-facebook"><i class="fa fa-facebook"></i></a>
+                                </li>
+                            </ul>
                         </div>
                         <!-- /.box-body -->
                     </div>

@@ -29,6 +29,9 @@ include_once('../config/dados_user.php');
     <link rel="stylesheet" href="../../assets/plugins/jvectormap/jquery-jvectormap-1.2.2.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="../dist/css/dashboard.css">
+    <!-- Sweet Alert -->
+    <link rel="stylesheet" href="../../assets/css/sweetalert.css" type="text/css">
+
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="../dist/css/skins/_all-skins.css">
@@ -94,25 +97,25 @@ include_once('../config/dados_user.php');
                                 if($caronas->getRowCount() >= 1){
                                     foreach ($caronas->getResult() as $carona){
                                         extract($carona);
-                                        echo "<pre>";
-                                        print_r($carona);
-                                        echo "<pre>";
-                                        /*
+//                                        echo "<pre>";
+//                                        print_r($carona);
+//                                        echo "<pre>";
+
                                         ?>
                                         <tr>
                                             <td><?= $i ?></td>
-                                            <td><?=  ?></td>
+                                            <td><?= $id_passageiro ?></td>
                                             <td>12/06/2016</td>
                                             <td><span class="label label-success">4</span></td>
-                                            <td>Santa Cândida</td>
-                                            <td>Pinheirinho</td>
-                                            <td>Saida as 8h30</td>
+                                            <td><?= $origem ?></td>
+                                            <td><?= $destino ?></td>
+                                            <td><?= $obsRota ?></td>
                                             <td>
-                                                <a class="btn btn-flat btn-success"><i class="fa fa-thumbs-o-up"></i> Solicitar</a>
+                                                <a class="btn btn-flat btn-success solicitar-rota"><i class="fa fa-thumbs-o-up"></i> Solicitar</a>
                                                 <a class="btn btn-flat btn-primary"><i class="fa fa-search"></i> Ver Detalhes</a>
                                             </td>
                                         </tr>
-                                        <?php*/
+                                        <?php
                                         $i++;
                                     }
                                 }
@@ -160,7 +163,14 @@ include_once('../config/dados_user.php');
 <script src="../dist/js/pages/dashboard2.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../dist/js/demo.js"></script>
+<!-- Sweet Alert -->
+<script type="text/javascript" src="../../assets/js/sweetalert.min.js"></script>
 </body>
+<script>
+    $('.solicitar-rota').on("click", function () {
+        swal("Solicitada!", "Rota solicitada com sucesso!", "success")
+    });
+</script>
 </html>
 
 

@@ -154,7 +154,7 @@ include_once('../config/dados_user.php');
                                             <td><?= date('d/m/Y', strtotime($cadastrada_em)) ?></td>
                                             <td><?= ucfirst($obsRota) ?></td>
                                             <td>
-                                                <a class="btn btn-flat btn-success"><i class="fa fa-car"></i> Iniciar rota</a>
+                                                <a class="btn btn-flat btn-success btn-ativa-rota" data-toggle="modal" data-target=".modal-ativar-rotas" data-rota="<?= $id ?>"><i class="fa fa-car"></i> Iniciar rota</a>
                                                 <a class="btn btn-flat btn-primary"><i class="fa fa-pencil"></i> Editar</a>
                                                 <a class="btn btn-flat btn-danger"><i class="fa fa-trash"></i> Excluir</a>
                                             </td>
@@ -193,6 +193,43 @@ include_once('../config/dados_user.php');
 </div>
 <!-- ./wrapper -->
 
+<!-- Modal Ativar Rota -->
+<div class="modal fade modal-ativar-rotas" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="gridSystemModalLabel">Ativar Rota</h4>
+            </div>
+            <form action="../ativar_rota.php" method="post">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12"><h3>Preencha os dados abaixo para ativar a rota</h3></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 text-center"><p>Só ative a rota quando você for percorrê-la. Antes de sair de casa, ative-a para que outras pessoas possam utiliza-la também.</p></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="assentos">Lugares disponíveis</label>
+                                <input type="number" id="assentos" name="assentosDisponiveis" min="0" max="4" />
+                                <input type="text" name="rotaId" id="rotaId" class="hidden"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="reset" class="btn btn-danger"><i class="fa fa-eraser"></i> Limpar dados</button>
+                    <button type="submit" class="btn btn-success"><i class="fa fa-car"></i> Ativar Rota</button>
+                </div>
+            </form>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+
 <!-- jQuery 2.2.0 -->
 <script src="../../assets/plugins/jQuery/jQuery-2.2.0.min.js"></script>
 <!-- Bootstrap 3.3.6 -->
@@ -217,6 +254,13 @@ include_once('../config/dados_user.php');
 <script>
 
     $( document ).ready(function () {
+        $('.modal-ativar-rotas').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget);
+            var rota = button.data('rota');
+            var modal = $(this);
+            modal.find('#rotaId').val(rota);
+        })
+
         $("#formRotas").validate({
             showErrors: function(errorMap, errorList) {
                 // Clean up any tooltips for valid elements
