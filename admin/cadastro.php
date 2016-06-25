@@ -1,5 +1,4 @@
 <?php
-echo " <meta charset=\"utf-8\">";
 include('config/initialize.php');
 include('config/Conn/Conn.class.php');
 
