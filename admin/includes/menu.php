@@ -14,10 +14,10 @@
         <!-- Infos Usuário -->
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="<?= DIST ?>/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                <img src="<?= FOTOS ?>/users/user_male.png" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
-                <p><?= ucwords($user->nome) ?></p>
+                <p><?= ucwords($nome) ?></p>
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
         </div>

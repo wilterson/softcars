@@ -86,58 +86,37 @@ include_once('../config/dados_user.php');
                                     <th>Comentário</th>
                                     <th>Ações</th>
                                 </tr>
-                                <tr>
-                                    <td>#1</td>
-                                    <td>John Doe</td>
-                                    <td>12/06/2016</td>
-                                    <td><span class="label label-success">4</span></td>
-                                    <td>Santa Cândida</td>
-                                    <td>Pinheirinho</td>
-                                    <td>Saida as 8h30</td>
-                                    <td>
-                                        <a class="btn btn-flat btn-success"><i class="fa fa-thumbs-o-up"></i> Solicitar</a>
-                                        <a class="btn btn-flat btn-primary"><i class="fa fa-search"></i> Ver Detalhes</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>#2</td>
-                                    <td>John Doe</td>
-                                    <td>12/06/2016</td>
-                                    <td><span class="label label-warning">1</span></td>
-                                    <td>Portão</td>
-                                    <td>Fazenda Rio Grande</td>
-                                    <td>Saida as 8h30</td>
-                                    <td>
-                                        <a class="btn btn-flat btn-success"><i class="fa fa-thumbs-o-up"></i> Solicitar</a>
-                                        <a class="btn btn-flat btn-primary"><i class="fa fa-search"></i> Ver Detalhes</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>#3</td>
-                                    <td>John Doe</td>
-                                    <td>12/06/2016</td>
-                                    <td><span class="label label-warning">2</span></td>
-                                    <td>Pinheirinho</td>
-                                    <td>Campina do Siqueira</td>
-                                    <td>Saida as 8h30</td>
-                                    <td>
-                                        <a class="btn btn-flat btn-success"><i class="fa fa-thumbs-o-up"></i> Solicitar</a>
-                                        <a class="btn btn-flat btn-primary"><i class="fa fa-search"></i> Ver Detalhes</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>#4</td>
-                                    <td>John Doe</td>
-                                    <td>12/06/2016</td>
-                                    <td><span class="label label-success">4</span></td>
-                                    <td>Pinhais</td>
-                                    <td>Colombo</td>
-                                    <td>Saida as 8h30</td>
-                                    <td>
-                                        <a class="btn btn-flat btn-success"><i class="fa fa-thumbs-o-up"></i> Solicitar</a>
-                                        <a class="btn btn-flat btn-primary"><i class="fa fa-search"></i> Ver Detalhes</a>
-                                    </td>
-                                </tr>
+                                <?php
+
+                                $caronas = new Read();
+                                $caronas->ExeRead('rotas_passageiro','WHERE ativa = 1');
+                                $i = 1;
+                                if($caronas->getRowCount() >= 1){
+                                    foreach ($caronas->getResult() as $carona){
+                                        extract($carona);
+                                        echo "<pre>";
+                                        print_r($carona);
+                                        echo "<pre>";
+                                        /*
+                                        ?>
+                                        <tr>
+                                            <td><?= $i ?></td>
+                                            <td><?=  ?></td>
+                                            <td>12/06/2016</td>
+                                            <td><span class="label label-success">4</span></td>
+                                            <td>Santa Cândida</td>
+                                            <td>Pinheirinho</td>
+                                            <td>Saida as 8h30</td>
+                                            <td>
+                                                <a class="btn btn-flat btn-success"><i class="fa fa-thumbs-o-up"></i> Solicitar</a>
+                                                <a class="btn btn-flat btn-primary"><i class="fa fa-search"></i> Ver Detalhes</a>
+                                            </td>
+                                        </tr>
+                                        <?php*/
+                                        $i++;
+                                    }
+                                }
+                                ?>
                             </table>
                         </div>
                     </div>

@@ -87,7 +87,8 @@ class Read extends Conn{
         try{
             $this->getSyntaxe();
             $this->Read->Execute();
-            $this->Result = $this->Read->fetchObject(__CLASS__);
+            //$this->Result = $this->Read->fetchObject(__CLASS__);
+            $this->Result = $this->Read->fetchAll();
         }catch(PDOException $e) {
             $this->Result = null;
             WSErro("<b>Erro ao ler do banco:</b> {$e->getMessage()}", $e->getCode());

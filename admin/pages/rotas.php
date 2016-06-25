@@ -25,8 +25,6 @@ include_once('../config/dados_user.php');
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-    <!-- jvectormap -->
-    <link rel="stylesheet" href="../../assets/plugins/jvectormap/jquery-jvectormap-1.2.2.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="../dist/css/dashboard.css">
     <link rel="stylesheet" href="../dist/css/rotas.css">
@@ -133,36 +131,48 @@ include_once('../config/dados_user.php');
                                     <th>Ações</th>
                                     <th>Favoritar</th>
                                 </tr>
-                                <tr>
-                                <?php
-                                    $rotas = new Read();
-                                    $rotas->ExeRead('rotas_passageiro','WHERE id_passageiro = :id', 'id='.$_SESSION['user_id']);
-                                    $result = $rotas->getResult();
 
-                                    while($row = mysqli_fetch_object( $rotas->getResult())){
-                                        echo "<pre>";
-                                        print_r($row);
-                                        echo "<pre>";
+                                <?php
+                                $atual = filter_input(INPUT_GET, 'atual', FILTER_VALIDATE_INT);
+
+                                $Pager = new Pager('rotas.php?atual=', 'Primeira', 'Última');
+                                $Pager->ExePager($atual, 4);
+
+                                $read = new Read();
+                                $read->ExeRead('rotas_passageiro', 'WHERE id_passageiro = :id', "id=".$_SESSION['user_id']);
+
+                                $i = 1;
+                                if( $read-> getRowCount()){
+                                    foreach ($read->getResult() as $rota){
+                                        extract($rota);
+                                        ?>
+                                        <tr>
+                                            <td><?=$i?></td>
+                                            <td><?= ucwords($nome_rota) ?></td>
+                                            <td><?= ucfirst($origem) ?></td>
+                                            <td><?= ucfirst($destino) ?></td>
+                                            <td><?= date('d/m/Y', strtotime($cadastrada_em)) ?></td>
+                                            <td><?= ucfirst($obsRota) ?></td>
+                                            <td>
+                                                <a class="btn btn-flat btn-success"><i class="fa fa-car"></i> Iniciar rota</a>
+                                                <a class="btn btn-flat btn-primary"><i class="fa fa-pencil"></i> Editar</a>
+                                                <a class="btn btn-flat btn-danger"><i class="fa fa-trash"></i> Excluir</a>
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-flat btn-warning"><i class="fa fa-star-o"></i></a>
+                                            </td>
+                                        </tr>
+                                        <?php
+                                        $i++;
                                     }
+                                }
                                 ?>
-                                    <td><?= $result->id ?></td>
-                                    <td><?= $result->nome_rota ?></td>
-                                    <td><?= $result->origem ?></td>
-                                    <td><?= $result->destino ?></td>
-                                    <td><?= date('d/m/Y', strtotime($result->cadastrada_em))?></td>
-                                    <td><?= $result->obsRota ?></td>
-                                    <td>
-                                        <a class="btn btn-flat btn-success"><i class="fa fa-car"></i> Iniciar rota</a>
-                                        <a class="btn btn-flat btn-primary"><i class="fa fa-pencil"></i> Editar</a>
-                                        <a class="btn btn-flat btn-danger"><i class="fa fa-trash"></i> Excluir</a>
-                                    </td>
-                                    <td>
-                                        <a class="btn btn-flat btn-warning"><i class="fa fa-star-o"></i></a>
-                                    </td>
-                                </tr>
                             </table>
                         </div>
                         <!-- /.box-body -->
+                        <div class="box-footer clearfix">
+                            <?= $Pager->getPaginator(); ?>
+                        </div>
                     </div>
                     <!-- /.box -->
                 </div>
@@ -187,8 +197,6 @@ include_once('../config/dados_user.php');
 <script src="../../assets/plugins/jQuery/jQuery-2.2.0.min.js"></script>
 <!-- Bootstrap 3.3.6 -->
 <script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
-<!-- FastClick -->
-<script src="../../assets/plugins/fastclick/fastclick.js"></script>
 <!-- AdminLTE App -->
 <script src="../dist/js/app.js"></script>
 
@@ -238,7 +246,7 @@ include_once('../config/dados_user.php');
                     success: function( data ){
                         if(data == "success"){
                             swal("Sucesso!", "Rota cadastrada com sucesso", "success");
-                            $('.ja-tem-conta').click();
+                            location.reload();
                         }else if(data == "error"){
                             swal("Erro!", "Erro ao inserir rota.", "error");
                         }

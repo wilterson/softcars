@@ -6,6 +6,9 @@
  * Time: 05:37
  */
 
+//require "initialize.php";
+//require 'session.php';
+
 $auth_user = new USER();
 $getUser = new Read();
 $getLoginUser =new Read();
@@ -17,3 +20,6 @@ $user = $getUser->getResult();
 
 $getLoginUser->ExeRead('login',"WHERE id_passageiro=:id", "id=".$user_id);
 $loginUser = $getLoginUser->getResult();
+
+extract($user[0]);
+extract($loginUser[0]);

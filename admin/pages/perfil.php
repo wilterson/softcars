@@ -70,19 +70,19 @@ include_once('../config/dados_user.php');
                     <!-- Profile Image -->
                     <div class="box box-primary">
                         <div class="box-body box-profile">
-                            <img class="profile-user-img img-responsive img-circle" src="<?= DIST ?>/img/user4-128x128.jpg" alt="Imagem de perfil do usuário">
+                            <img class="profile-user-img img-responsive img-circle" src="<?= FOTOS ?>/users/user_male.png" alt="Imagem de perfil do usuário">
 
-                            <h3 class="profile-username text-center"><?= ucwords($user->nome) ?></h3>
+                            <h3 class="profile-username text-center"><?= ucwords($nome) ?></h3>
 
                             <ul class="list-group list-group-unbordered">
                                 <li class="list-group-item">
                                     <b>Carros Cadastrados</b> <a class="pull-right">0</a>
                                 </li>
                                 <li class="list-group-item">
-                                <b>Tipo de Uuário</b> <a class="pull-right"><?= $user->tipo_user == 1 ? 'Passageiro' : 'Motorista'?></a>
+                                <b>Tipo de Uuário</b> <a class="pull-right"><?= $tipo_user == 1 ? 'Passageiro' : 'Motorista'?></a>
                                 </li>
                                 <li class="list-group-item">
-                                    <b>Idade</b> <a class="pull-right"><?php   $idade = new Auxiliares(); $idade->getIdade($user->dataNascimento); echo $idade->idade;?></a>
+                                    <b>Idade</b> <a class="pull-right"><?php   $idadeUser = new Auxiliares(); $idadeUser->getIdade($dataNascimento); echo $idadeUser->idade;?></a>
                                 </li>
                             </ul>
 
@@ -111,7 +111,7 @@ include_once('../config/dados_user.php');
                                         <label for="Login" class="col-sm-2 control-label">Login</label>
 
                                         <div class="col-sm-10">
-                                            <input type="email" class="form-control" id="Login" name="login" placeholder="Login" value="<?= $loginUser->login ?>">
+                                            <input type="email" class="form-control" id="Login" name="login" placeholder="Login" value="<?= $login ?>">
                                             <span class="text-sm text-blue">E-mail utilizado para fazer login no sistema</span>
                                         </div>
                                     </div>
@@ -151,35 +151,35 @@ include_once('../config/dados_user.php');
                                         <label for="userName" class="col-sm-2 control-label">Nome</label>
 
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="userName" name="nome" placeholder="Nome Completo" value="<?= ucwords($user->nome) ?>">
+                                            <input type="text" class="form-control" id="userName" name="nome" placeholder="Nome Completo" value="<?= ucwords($nome) ?>">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="userEmail" class="col-sm-2 control-label">Email</label>
 
                                         <div class="col-sm-10">
-                                            <input type="email" class="form-control" name="email" id="userEmail" placeholder="Email" value="<?= $user->email ?>">
+                                            <input type="email" class="form-control" name="email" id="userEmail" placeholder="Email" value="<?= $email ?>">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="userCelular" class="col-sm-2 control-label">Celular</label>
 
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" name="celular" id="userCelular" placeholder="Celular" value="<?= $user->celular ?>">
+                                            <input type="text" class="form-control" name="celular" id="userCelular" placeholder="Celular" value="<?= $celular ?>">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="userDtNasc" class="col-sm-2 control-label">Data de nascimento</label>
 
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" name="dtNasc" id="userDtNasc" placeholder="dd/mm/aaaa" readonly="readonly" style="background: #FFF;" value="<?= $user->dataNascimento ?>">
+                                            <input type="text" class="form-control" name="dtNasc" id="userDtNasc" placeholder="dd/mm/aaaa" readonly="readonly" style="background: #FFF;" value="<?= $dataNascimento ?>">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="userCep" class="col-sm-2 control-label">Cep</label>
 
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" name="cep" id="userCep" placeholder="Cep" value="<?= $user->cep ?>">
+                                            <input type="text" class="form-control" name="cep" id="userCep" placeholder="Cep" value="<?= $cep ?>">
                                         </div>
                                     </div>
                                     <div class="form-group">

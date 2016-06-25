@@ -59,7 +59,7 @@ class Pager extends Read{
     /**
      * @return mixed
      */
-    public function getLimit()    {
+    public function getLimit(){
         return $this->Limit;
     }
 
@@ -107,7 +107,7 @@ class Pager extends Read{
             $Paginas = ceil($this->Rows / $this->Limit);
             $MaxLinks = $this->MaxLinks;
 
-            $this->Paginator = "<ul class=\"paginator\">";
+            $this->Paginator = "<ul class=\"pagination pagination-sm no-margin pull-right\">";
             $this->Paginator .= "<li><a title=\"{$this->First}\" href=\"{$this->Link}1\">{$this->First}</a></li>";
 
             for ($iPag = $this->Page - $MaxLinks; $iPag <= $this->Page - 1; $iPag ++){

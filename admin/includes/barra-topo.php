@@ -30,50 +30,20 @@
         <!-- Navbar Right Menu -->
         <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
-                <!-- Messages: style can be found in dropdown.less-->
-                <li class="dropdown messages-menu">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <i class="fa fa-bell-o"></i>
-                        <span class="label label-danger">1</span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li class="header">Você tem <span>1</span> novas notificações</li>
-                        <li>
-                            <!-- inner menu: contains the actual data -->
-                            <ul class="menu">
-                                <li><!-- start message -->
-                                    <a href="#">
-                                        <div class="pull-left">
-                                            <img src="<?= DIST ?>/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-                                        </div>
-                                        <h4>
-                                            Support Team
-                                            <small><i class="fa fa-clock-o"></i> 5 mins</small>
-                                        </h4>
-                                        <p>Why not buy a new awesome theme?</p>
-                                    </a>
-                                </li>
-                                <!-- end message -->
-                            </ul>
-                        </li>
-                        <li class="footer"><a href="#">See All Messages</a></li>
-                    </ul>
-                </li>
-
                 <!-- Usuario -->
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <img src="<?= DIST ?>/img/user2-160x160.jpg" class="user-image" alt="User Image">
-                        <span class="hidden-xs"><?= ucwords($user->nome) ?></span>
+                        <img src="<?= FOTOS ?>/users/user_male.png" class="user-image" alt="User Image">
+                        <span class="hidden-xs"><?= ucwords($nome) ?></span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->
                         <li class="user-header">
-                            <img src="<?= DIST ?>/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                            <img src="<?= FOTOS ?>/users/user_male.png" class="img-circle" alt="User Image">
 
                             <p>
-                                <?= ucwords($user->nome) ?>
-                                <small>Membro Desde <?php  $data = new Auxiliares(); $data->dataBR($user->data_cadastro); echo $data->dateBR ?></small>
+                                <?= ucwords($nome) ?>
+                                <small>Membro Desde <?php  $data = new Auxiliares(); $data->dataBR($data_cadastro); echo $data->dateBR ?></small>
                             </p>
                         </li>
                         <!-- Menu Footer-->
